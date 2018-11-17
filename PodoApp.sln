@@ -1,0 +1,79 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28306.52
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PodoApp.WebUI", "PodoApp.WebUI\PodoApp.WebUI.csproj", "{C8D3ABE4-68FF-43E3-8C8D-D9C8CCB2DC92}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Presentation", "1. Presentation", "{070B6D50-DB71-4DA7-89E0-A105EFEA0B6B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Application", "2. Application", "{E6CD6416-1D19-4547-89F5-D328664BB702}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4. Infrastructure", "4. Infrastructure", "{74126BDB-645C-48C2-AE46-1F9C1CD24942}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PodoApp.Contracts.ServiceLibrary", "PodoApp.Contracts.ServiceLibrary\PodoApp.Contracts.ServiceLibrary.csproj", "{A6EC784C-A72D-44A0-B695-41DCBB81CA42}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PodoApp.Impl.ServiceLibrary", "PodoApp.Impl.ServiceLibrary\PodoApp.Impl.ServiceLibrary.csproj", "{958CB9E4-F3E3-416D-A675-2D82B2D254D3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. Domain", "3. Domain", "{8B94887D-A4F6-46E4-B167-D08D6AD82F80}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PodoApp.Library", "PodoApp.Library\PodoApp.Library.csproj", "{88F24C53-A4C9-4224-BE2B-9ECE6D5CF809}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.1 Data", "4.1 Data", "{C1AED1F6-3EC6-4361-A114-1B26ACC0363C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.2 DataBase", "4.2 DataBase", "{B2EEE43F-E45C-467C-A66B-6DD398817DB2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PodoApp.DB.Infrastructure", "PodoApp.DB.Infrastructure\PodoApp.DB.Infrastructure.csproj", "{FE8D56BB-0402-4E89-AD7E-CEAC9DD06A69}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "PodoApp.Database", "PodoApp.Database\PodoApp.Database.sqlproj", "{4F9D8B4B-BF12-4050-A7E2-9C5957ACDA87}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C8D3ABE4-68FF-43E3-8C8D-D9C8CCB2DC92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8D3ABE4-68FF-43E3-8C8D-D9C8CCB2DC92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8D3ABE4-68FF-43E3-8C8D-D9C8CCB2DC92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8D3ABE4-68FF-43E3-8C8D-D9C8CCB2DC92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6EC784C-A72D-44A0-B695-41DCBB81CA42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6EC784C-A72D-44A0-B695-41DCBB81CA42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6EC784C-A72D-44A0-B695-41DCBB81CA42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6EC784C-A72D-44A0-B695-41DCBB81CA42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{958CB9E4-F3E3-416D-A675-2D82B2D254D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{958CB9E4-F3E3-416D-A675-2D82B2D254D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{958CB9E4-F3E3-416D-A675-2D82B2D254D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{958CB9E4-F3E3-416D-A675-2D82B2D254D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88F24C53-A4C9-4224-BE2B-9ECE6D5CF809}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88F24C53-A4C9-4224-BE2B-9ECE6D5CF809}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88F24C53-A4C9-4224-BE2B-9ECE6D5CF809}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88F24C53-A4C9-4224-BE2B-9ECE6D5CF809}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE8D56BB-0402-4E89-AD7E-CEAC9DD06A69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE8D56BB-0402-4E89-AD7E-CEAC9DD06A69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE8D56BB-0402-4E89-AD7E-CEAC9DD06A69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE8D56BB-0402-4E89-AD7E-CEAC9DD06A69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F9D8B4B-BF12-4050-A7E2-9C5957ACDA87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F9D8B4B-BF12-4050-A7E2-9C5957ACDA87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F9D8B4B-BF12-4050-A7E2-9C5957ACDA87}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{4F9D8B4B-BF12-4050-A7E2-9C5957ACDA87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F9D8B4B-BF12-4050-A7E2-9C5957ACDA87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F9D8B4B-BF12-4050-A7E2-9C5957ACDA87}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C8D3ABE4-68FF-43E3-8C8D-D9C8CCB2DC92} = {070B6D50-DB71-4DA7-89E0-A105EFEA0B6B}
+		{A6EC784C-A72D-44A0-B695-41DCBB81CA42} = {E6CD6416-1D19-4547-89F5-D328664BB702}
+		{958CB9E4-F3E3-416D-A675-2D82B2D254D3} = {E6CD6416-1D19-4547-89F5-D328664BB702}
+		{88F24C53-A4C9-4224-BE2B-9ECE6D5CF809} = {8B94887D-A4F6-46E4-B167-D08D6AD82F80}
+		{C1AED1F6-3EC6-4361-A114-1B26ACC0363C} = {74126BDB-645C-48C2-AE46-1F9C1CD24942}
+		{B2EEE43F-E45C-467C-A66B-6DD398817DB2} = {74126BDB-645C-48C2-AE46-1F9C1CD24942}
+		{FE8D56BB-0402-4E89-AD7E-CEAC9DD06A69} = {C1AED1F6-3EC6-4361-A114-1B26ACC0363C}
+		{4F9D8B4B-BF12-4050-A7E2-9C5957ACDA87} = {B2EEE43F-E45C-467C-A66B-6DD398817DB2}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0F56C3A9-6443-4ECF-B08E-1C16EBB26380}
+	EndGlobalSection
+EndGlobal

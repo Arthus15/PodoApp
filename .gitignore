@@ -1,0 +1,16 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/packages
+/.vs
+/PodoApp.Library/obj/Debug
+/PodoApp.Library/bin/Debug
+/PodoApp.Impl.ServiceLibrary/obj/Debug
+/PodoApp.Impl.ServiceLibrary/bin/Debug
+/PodoApp.DB.Infrastructure/obj/Debug
+/PodoApp.DB.Infrastructure/bin/Debug
+/PodoApp.Database/obj/Debug
+/PodoApp.Database/bin/Debug
+/PodoApp.Contracts.ServiceLibrary/obj/Debug
+/PodoApp.Contracts.ServiceLibrary/bin/Debug
