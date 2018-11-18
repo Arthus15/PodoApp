@@ -1,0 +1,85 @@
+17/11/2018 1:18:44	This log contains information about the import schema operation into project 'PodoApp.Database' on computer 'LAPTOP-FUFCKL29' by user 'diabl'.
+17/11/2018 1:18:44	Import of database schema has started.
+17/11/2018 1:18:52	Gathering database credentials
+17/11/2018 1:18:52	Gathering database options
+17/11/2018 1:18:52	Gathering generic database scoped configuration option
+17/11/2018 1:18:52	Gathering users
+17/11/2018 1:18:52	Gathering roles
+17/11/2018 1:18:52	Gathering application roles
+17/11/2018 1:18:52	Gathering role memberships
+17/11/2018 1:18:52	Gathering filegroups
+17/11/2018 1:18:52	Gathering full-text catalogs
+17/11/2018 1:18:52	Gathering assemblies
+17/11/2018 1:18:52	Gathering certificates
+17/11/2018 1:18:52	Gathering asymmetric keys
+17/11/2018 1:18:52	Gathering symmetric keys
+17/11/2018 1:18:52	Gathering encrypted symmetric keys
+17/11/2018 1:18:52	Gathering schemas
+17/11/2018 1:18:52	Gathering XML schema collections
+17/11/2018 1:18:52	Gathering user-defined data types
+17/11/2018 1:18:52	Gathering user-defined types
+17/11/2018 1:18:52	Gathering table types
+17/11/2018 1:18:52	Gathering unique keys for table types
+17/11/2018 1:18:52	Gathering primary keys for table types
+17/11/2018 1:18:52	Gathering indexes for table types
+17/11/2018 1:18:52	Gathering check constraints for table types
+17/11/2018 1:18:52	Gathering default constraints for table types
+17/11/2018 1:18:52	Gathering partition functions
+17/11/2018 1:18:52	Gathering partition schemes
+17/11/2018 1:18:54	Gathering functions
+17/11/2018 1:18:54	Gathering encrypted functions
+17/11/2018 1:18:54	Gathering aggregates
+17/11/2018 1:18:54	Gathering procedures
+17/11/2018 1:18:54	Gathering encrypted procedures
+17/11/2018 1:18:54	Gathering tables
+17/11/2018 1:18:54	Gathering primary keys
+17/11/2018 1:18:54	Gathering unique constraints
+17/11/2018 1:18:54	Gathering foreign keys
+17/11/2018 1:18:54	Gathering default constraints
+17/11/2018 1:18:54	Gathering check constraints
+17/11/2018 1:18:54	Gathering views
+17/11/2018 1:18:54	Gathering encrypted views
+17/11/2018 1:18:54	Gathering indexes
+17/11/2018 1:18:54	Gathering statistics
+17/11/2018 1:18:54	Gathering full-text index stoplists
+17/11/2018 1:18:54	Gathering search property lists
+17/11/2018 1:18:54	Gathering search properties
+17/11/2018 1:18:54	Gathering full-text indexes
+17/11/2018 1:18:54	Gathering column store indexes
+17/11/2018 1:18:54	Gathering spatial indexes
+17/11/2018 1:18:54	Gathering XML indexes
+17/11/2018 1:18:54	Gathering Selective XML indexes
+17/11/2018 1:18:54	Gathering encrypted triggers
+17/11/2018 1:18:54	Gathering triggers
+17/11/2018 1:18:54	Gathering encrypted and clr ddl triggers
+17/11/2018 1:18:54	Gathering ddl triggers
+17/11/2018 1:18:54	Gathering synonyms
+17/11/2018 1:18:54	Gathering defaults
+17/11/2018 1:18:54	Gathering data constraint uddt bindings
+17/11/2018 1:18:54	Gathering rules
+17/11/2018 1:18:54	Gathering data constraint uddt bindings
+17/11/2018 1:18:54	Gathering message types
+17/11/2018 1:18:54	Gathering queues
+17/11/2018 1:18:54	Gathering contracts
+17/11/2018 1:18:54	Gathering services
+17/11/2018 1:18:54	Gathering event notifications
+17/11/2018 1:18:54	Gathering remote service bindings
+17/11/2018 1:18:54	Gathering broker priorities
+17/11/2018 1:18:54	Gathering signatures
+17/11/2018 1:18:54	Gathering data compression options
+17/11/2018 1:18:54	Gathering sequence types
+17/11/2018 1:18:54	Gathering security policies
+17/11/2018 1:18:54	Gather column encryption keys
+17/11/2018 1:18:54	Gathering column master keys
+17/11/2018 1:18:54	Gathering external data sources
+17/11/2018 1:18:54	Gathering external file formats
+17/11/2018 1:18:54	Gathering external tables
+17/11/2018 1:18:54	Gathering extended properties
+17/11/2018 1:18:54	Gathering credentials
+17/11/2018 1:18:54	Gathering logins
+17/11/2018 1:18:54	Gathering server audits
+17/11/2018 1:18:55	Scanning project for duplicate elements
+17/11/2018 1:18:55	Finished duplicate element processing
+17/11/2018 1:18:56	Finished importing database.
+17/11/2018 1:18:56	A summary of the import was saved to the following location: D:\TFG\PodoApp\PodoApp.Database\Import Schema Logs\PodoApp.Database_20181117121844.log
+17/11/2018 1:18:56	Click Finish to continue...

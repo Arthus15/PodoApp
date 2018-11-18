@@ -14,3 +14,5 @@
 /PodoApp.Database/bin/Debug
 /PodoApp.Contracts.ServiceLibrary/obj/Debug
 /PodoApp.Contracts.ServiceLibrary/bin/Debug
+/PodoApp.WebUI/obj/Debug
+/PodoApp.WebUI/bin

@@ -14,7 +14,7 @@
     </RootPath>
     <RootNamespace>PodoApp.Database</RootNamespace>
     <AssemblyName>PodoApp.Database</AssemblyName>
-    <ModelCollation>1033, CI</ModelCollation>
+    <ModelCollation>3082,CI</ModelCollation>
     <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
     <DeployToDatabase>True</DeployToDatabase>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
@@ -23,6 +23,8 @@
     <SqlServerVerification>False</SqlServerVerification>
     <IncludeCompositeObjects>True</IncludeCompositeObjects>
     <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>Modern_Spanish_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\Release\</OutputPath>
@@ -57,5 +59,53 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\decubitoSupinoExploracionMorfologica.sql" />
+    <Build Include="dbo\Tables\decubitoSupinoAntepiePosicion1Radio.sql" />
+    <Build Include="dbo\Tables\formulaMetatarsal.sql" />
+    <Build Include="dbo\Tables\formulaDigital.sql" />
+    <Build Include="dbo\Tables\formulaPodal.sql" />
+    <Build Include="dbo\Tables\primeraVisita.sql" />
+    <Build Include="dbo\Tables\materialSoportePlantar.sql" />
+    <Build Include="dbo\Tables\podologo.sql" />
+    <Build Include="dbo\Tables\anguloFick.sql" />
+    <Build Include="dbo\Tables\tipoEstudio.sql" />
+    <Build Include="dbo\Tables\estudioOrtopodologico.sql" />
+    <Build Include="dbo\Tables\tratamiento.sql" />
+    <Build Include="dbo\Tables\sedestacionExploracionMuscular.sql" />
+    <Build Include="dbo\Tables\retropie.sql" />
+    <Build Include="dbo\Tables\deambulacion.sql" />
+    <Build Include="dbo\Tables\decubitoSupinoPulsos.sql" />
+    <Build Include="dbo\Tables\persona.sql" />
+    <Build Include="dbo\Tables\diagnostico.sql" />
+    <Build Include="dbo\Tables\visionSagital.sql" />
+    <Build Include="dbo\Tables\pruebasComplementarias.sql" />
+    <Build Include="dbo\Tables\visionFrontal.sql" />
+    <Build Include="dbo\Tables\__MigrationHistory.sql" />
+    <Build Include="dbo\Tables\AspNetRoles.sql" />
+    <Build Include="dbo\Tables\sedestacionExploracionArticular.sql" />
+    <Build Include="dbo\Tables\AspNetUserClaims.sql" />
+    <Build Include="dbo\Tables\decubitoPronoExploracionArticular.sql" />
+    <Build Include="dbo\Tables\AspNetUserLogins.sql" />
+    <Build Include="dbo\Tables\FPI.sql" />
+    <Build Include="dbo\Tables\AspNetUserRoles.sql" />
+    <Build Include="dbo\Tables\AspNetUsers.sql" />
+    <Build Include="dbo\Tables\antecedentesFamiliares.sql" />
+    <Build Include="dbo\Tables\antepie.sql" />
+    <Build Include="dbo\Tables\antecedentesPatologicos.sql" />
+    <Build Include="dbo\Tables\antecedentesPodologicos.sql" />
+    <Build Include="dbo\Tables\antecedentesFisiologicos.sql" />
+    <Build Include="dbo\Tables\calzadoHabitual.sql" />
+    <Build Include="dbo\Tables\consulta.sql" />
+    <Build Include="dbo\Tables\bipedestacion.sql" />
+    <Build Include="dbo\Tables\paciente.sql" />
+    <Build Include="dbo\Tables\decubitoSupinoPulsosTipo.sql" />
+    <Build Include="dbo\Tables\decubitoSupinoPosicionAnguloAntepie.sql" />
+    <Build Include="dbo\Tables\historialClinico.sql" />
+    <Build Include="dbo\Tables\decubitoSupinoExploracionMuscular.sql" />
+    <Build Include="dbo\Tables\decubitoSupinoExploracionArticular.sql" />
   </ItemGroup>
 </Project>
