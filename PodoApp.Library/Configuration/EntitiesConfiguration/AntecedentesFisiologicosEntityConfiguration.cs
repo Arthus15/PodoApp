@@ -12,7 +12,7 @@ namespace PodoApp.Library.Configuration.EntitiesConfiguration
     {
         public AntecedentesFisiologicosEntityConfiguration()
         {
-            this..HasMany(e => e.historialClinico)
+            this.HasMany(e => e.historialClinico)
                 .WithOptional(e => e.antecedentesFisiologicos)
                 .HasForeignKey(e => e.id_ant_fisiologicos);
         }
