@@ -4,7 +4,7 @@ namespace PodoApp.Library.Entities
     using System.Data.Entity;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
-    using PodoApp.Library.Configuration.EntitiesConfiguration;
+    using PodoApp.Library.Configuration.Entities;
 
     public partial class PodologiaContext : DbContext
     {
