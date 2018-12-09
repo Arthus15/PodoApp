@@ -1,0 +1,25 @@
+﻿<!-- START Sidebar (left)-->
+<div class="aside-inner">
+    <nav class="sidebar" data-sidebar-anyclick-close="">
+        <!-- START sidebar nav-->
+        <ul class="nav">
+            
+            <!-- Iterates over all sidebar items-->
+            <li class="nav-heading">
+                <span>Menú</span>
+            </li>
+
+            <li class="@Html.isActive(controller: "ListaPacientes")">
+                <a href="@Url.Action("Index", "ListaPacientes")" title="Listado de pacientes">
+                    <em class="icon-list"></em>
+                    <span>Listado de pacientes</span>
+                </a>
+            </li>
+
+        </ul>
+        <!-- END sidebar nav-->
+    </nav>
+</div>
+<!-- END Sidebar (left)-->
+
+
