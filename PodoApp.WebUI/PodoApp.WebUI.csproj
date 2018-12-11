@@ -177,6 +177,9 @@
     <Compile Include="App_Start\Startup.cs" />
     <Compile Include="Areas\Dashboard\Controllers\DashboardController.cs" />
     <Compile Include="Areas\Dashboard\DashboardAreaRegistration.cs" />
+    <Compile Include="Areas\Login\Controllers\LoginController.cs" />
+    <Compile Include="Areas\Login\LoginAreaRegistration.cs" />
+    <Compile Include="Areas\Login\Models\LoginModel.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -259,6 +262,8 @@
     <Content Include="Content\Json\jqgrid-tree.json" />
     <Content Include="Content\Json\jqgrid.json" />
     <Content Include="Content\Json\xeditable-groups.json" />
+    <Content Include="Areas\Login\Views\web.config" />
+    <Content Include="Areas\Login\Views\Login\Login.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -494,7 +499,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Dashboard\Models\" />
-    <Folder Include="Areas\Login\" />
     <Folder Include="Areas\PrimeraVista\Controllers\" />
     <Folder Include="Areas\PrimeraVista\MapperFactory\" />
     <Folder Include="Areas\PrimeraVista\Models\" />

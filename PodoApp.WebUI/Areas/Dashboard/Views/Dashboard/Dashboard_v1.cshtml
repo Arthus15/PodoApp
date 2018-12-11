@@ -1,6 +1,35 @@
 ﻿@{
-    ViewBag.Title = "Informe de fatiga";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Dashboard";
 }
+@if (Request.IsAuthenticated)
+{
 
-<h1> HOLA MERITXELL</h1>
+    <b><h3 align="center">Bienvenido/a a PodoApp</h3></b>
+
+    <style>
+
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: auto;
+            margin-top: auto;
+        }
+    </style>
+    <img src="~/Content/Images/facultadRetocada.png" class="img-circle" style="width:75%; margin-bottom:5%; margin-top:5%;" />
+}
+else
+{
+    Response.Redirect(Url.Action("Login", "Pages"));
+
+}
+@section Styles {
+    @Styles.Render("~/bundles/weatherIcons")
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/sparklines")
+    @Scripts.Render("~/bundles/flot")
+    @Scripts.Render("~/bundles/classyloader")
+    @Scripts.Render("~/bundles/moment")
+    @Scripts.Render("~/bundles/demoFlot")
+}
