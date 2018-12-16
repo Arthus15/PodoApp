@@ -7,7 +7,7 @@
 
 @if (Request.IsAuthenticated)
 {
-    Response.Redirect(Url.Action("Dashboard_v1", "Dashboard"));
+    Response.Redirect("~/Dashboard/Dashboard/Dashboard_v1");
 }
 else
 {

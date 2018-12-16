@@ -1,4 +1,4 @@
-﻿using PodoApp.Library.Entities;
+﻿using PodoApp.DB.Infrastructure.Entities;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace PodoApp.DB.Infrastructure.Abstracts
 {
-    public class BaseRepository<TEntity> where TEntity : class
+    public abstract class BaseRepository<TEntity> where TEntity : class
     {
         internal PodologiaContext context;
         internal DbSet<TEntity> dbSet;

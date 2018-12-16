@@ -1,5 +1,6 @@
 ﻿@{
     ViewBag.Title = "Dashboard";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @if (Request.IsAuthenticated)
 {
@@ -20,7 +21,7 @@
 }
 else
 {
-    Response.Redirect(Url.Action("Login", "Pages"));
+    Response.Redirect(Url.Action("Login", "Login"));
 
 }
 @section Styles {

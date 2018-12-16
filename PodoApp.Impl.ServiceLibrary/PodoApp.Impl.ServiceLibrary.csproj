@@ -79,6 +79,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configuration\Owin\ApplicationSignInManager.cs" />
+    <Compile Include="PacienteService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
@@ -87,9 +88,17 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\PodoApp.Contracts.ServiceLibrary\PodoApp.Contracts.ServiceLibrary.csproj">
+      <Project>{A6EC784C-A72D-44A0-B695-41DCBB81CA42}</Project>
+      <Name>PodoApp.Contracts.ServiceLibrary</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PodoApp.DB.Infrastructure\PodoApp.DB.Infrastructure.csproj">
       <Project>{FE8D56BB-0402-4E89-AD7E-CEAC9DD06A69}</Project>
       <Name>PodoApp.DB.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PodoApp.Library\PodoApp.Library.csproj">
+      <Project>{88F24C53-A4C9-4224-BE2B-9ECE6D5CF809}</Project>
+      <Name>PodoApp.Library</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

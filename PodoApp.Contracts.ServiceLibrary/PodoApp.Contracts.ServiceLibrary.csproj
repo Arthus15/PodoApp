@@ -54,11 +54,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\IPacienteService.cs" />
+    <Compile Include="Dto\ConsultaDto.cs" />
+    <Compile Include="Dto\DiagnosticoDto.cs" />
+    <Compile Include="Dto\HistorialClinicoDto.cs" />
+    <Compile Include="Dto\PacienteDto.cs" />
+    <Compile Include="Dto\PersonaDto.cs" />
+    <Compile Include="Dto\PodologoDto.cs" />
+    <Compile Include="Dto\PrimeraVisitaDto.cs" />
+    <Compile Include="Dto\PruebaComplementariasDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Mappers\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

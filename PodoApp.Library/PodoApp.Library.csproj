@@ -77,88 +77,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Configuration\Entities\AnguloFickEntityConfiguration.cs" />
-    <Compile Include="Configuration\Entities\AntecedentesFamiliaresEntityConfiguration.cs" />
-    <Compile Include="Configuration\Entities\AntecedentesFisiologicosEntityConfiguration.cs" />
-    <Compile Include="Configuration\Entities\AntecedentesPatologicosEntityConfiguration.cs" />
-    <Compile Include="Configuration\Entities\AntecedentesPodologicosEntityConfiguration.cs" />
-    <Compile Include="Configuration\Entities\AntepieEntityConfiguration.cs" />
-    <Compile Include="Configuration\Entities\AspNetRolesEntityConfiguration.cs" />
-    <Compile Include="Configuration\Entities\AspNetUsersEntityConfiguration.cs" />
-    <Compile Include="Configuration\Entities\BipedestacionEntityConfiguration.cs" />
-    <Compile Include="Configuration\Entities\CalzadoHabitualEntityConfiguration.cs" />
-    <Compile Include="Configuration\Entities\DeambulacionEntityConfiguration.cs" />
-    <Compile Include="Configuration\Entities\DecubitoPronoExploracionArticularEntityConfiguration.cs" />
-    <Compile Include="Configuration\Entities\DecubitoSupinoAntepiePosicion1RadioEntityConfiguration.cs" />
-    <Compile Include="Configuration\Entities\DecubitoSupinoExploracionArticularEntityConfiguration.cs" />
-    <Compile Include="Configuration\Entities\DecubitoSupinoExploracionMorfologicaEntityConfiguration.cs" />
-    <Compile Include="Configuration\Entities\DecubitoSupinoExploracionMuscularEntityConfiguration.cs" />
-    <Compile Include="Configuration\Entities\DecubitoSupinoPosicionAnguloAntepieEntityConfiguration.cs" />
-    <Compile Include="Configuration\Entities\DecubitoSupinoPulsosEntityConfiguration.cs" />
-    <Compile Include="Configuration\Entities\DecubitoSupinoPulsosTipoEntityConfiguration.cs" />
-    <Compile Include="Configuration\Entities\EstudioOrtopodologicoEntityConfiguration.cs" />
-    <Compile Include="Configuration\Entities\FormulaDigitalEntityConfiguration.cs" />
-    <Compile Include="Configuration\Entities\FormulaMetatarsalEntityConfiguration.cs" />
-    <Compile Include="Configuration\Entities\FormulaPodalEntityConfiguration.cs" />
-    <Compile Include="Configuration\Entities\FPIEntityConfiguration.cs" />
-    <Compile Include="Configuration\Entities\HistorialClinicoEntityConfiguration.cs" />
-    <Compile Include="Configuration\Entities\PersonaEntityConfiguration.cs" />
-    <Compile Include="Configuration\Entities\PacienteEntityConfiguration.cs" />
-    <Compile Include="Configuration\Entities\PodologoEntityConfiguration.cs" />
-    <Compile Include="Configuration\Entities\PrimeraVisitaEntityConfiguration.cs" />
-    <Compile Include="Configuration\Entities\RetropieEntityConfiguration.cs" />
-    <Compile Include="Configuration\Entities\SedestacionExploracionArticularEntityConfiguration.cs" />
-    <Compile Include="Configuration\Entities\SedestacionExploracionMuscularEntityConfiguration.cs" />
-    <Compile Include="Configuration\Entities\TipoEstudioEntityConfiguration.cs" />
-    <Compile Include="Configuration\Entities\TratamientoEntityConfiguration.cs" />
-    <Compile Include="Configuration\Entities\VisionFrontalEntityConfiguration.cs" />
-    <Compile Include="Configuration\Entities\VisionSagitalEntityConfiguration.cs" />
-    <Compile Include="Entities\AnguloFick.cs" />
-    <Compile Include="Entities\AntecedentesFamiliares.cs" />
-    <Compile Include="Entities\AntecedentesFisiologicos.cs" />
-    <Compile Include="Entities\AntecedentesPatologicos.cs" />
-    <Compile Include="Entities\AntecedentesPodologicos.cs" />
-    <Compile Include="Entities\Antepie.cs" />
-    <Compile Include="Entities\AspNetRoles.cs" />
-    <Compile Include="Entities\AspNetUserClaims.cs" />
-    <Compile Include="Entities\AspNetUserLogins.cs" />
-    <Compile Include="Entities\AspNetUsers.cs" />
-    <Compile Include="Entities\Bipedestacion.cs" />
-    <Compile Include="Entities\CalzadoHabitual.cs" />
-    <Compile Include="Entities\Consullta.cs" />
-    <Compile Include="Entities\C__MigrationHistory.cs" />
-    <Compile Include="Entities\Deambulacion.cs" />
-    <Compile Include="Entities\DecubitoPronoExploracionArticular.cs" />
-    <Compile Include="Entities\DecubitoSupinoAntepiePosicion1Radio.cs" />
-    <Compile Include="Entities\DecubitoSupinoExploracionArticular.cs" />
-    <Compile Include="Entities\DecubitoSupinoExploracionMorfologica.cs" />
-    <Compile Include="Entities\DecubitoSupinoExploracionMuscular.cs" />
-    <Compile Include="Entities\DecubitoSupinoPosicionAnguloAntepie.cs" />
-    <Compile Include="Entities\DecubitoSupinoPulsos.cs" />
-    <Compile Include="Entities\DecubitoSupinoPulsosTipo.cs" />
-    <Compile Include="Entities\Diagnostico.cs" />
-    <Compile Include="Entities\EstudioOrtopodologico.cs" />
-    <Compile Include="Entities\FormulaDigital.cs" />
-    <Compile Include="Entities\FormulaMetatarsal.cs" />
-    <Compile Include="Entities\FormulaPodal.cs" />
-    <Compile Include="Entities\FPI.cs" />
-    <Compile Include="Entities\HistorialClinico.cs" />
-    <Compile Include="Entities\MaterialSoportePlantar.cs" />
-    <Compile Include="Entities\Paciente.cs" />
-    <Compile Include="Entities\Persona.cs" />
-    <Compile Include="PodologiaContext.cs" />
-    <Compile Include="Entities\Podologo.cs" />
-    <Compile Include="Entities\PrimeraVisita.cs" />
-    <Compile Include="Entities\PruebasComplementarias.cs" />
-    <Compile Include="Entities\Retropie.cs" />
-    <Compile Include="Entities\SedestacionExploracionArticular.cs" />
-    <Compile Include="Entities\SedestacionExploracionMuscular.cs" />
-    <Compile Include="Entities\Sysdiagrams.cs" />
-    <Compile Include="Entities\TipoEstudio.cs" />
-    <Compile Include="Entities\Tratamiento.cs" />
-    <Compile Include="Entities\VisionFrontal.cs" />
-    <Compile Include="Entities\VisionSagital.cs" />
+    <Compile Include="IBaseRepository.cs" />
+    <Compile Include="Model\ConsultaModel.cs" />
+    <Compile Include="Model\DiagnosticoModel.cs" />
+    <Compile Include="Model\HistorialClinicoModel.cs" />
+    <Compile Include="Model\PacienteModel.cs" />
+    <Compile Include="Model\PersonaModel.cs" />
+    <Compile Include="Model\PodologoModel.cs" />
+    <Compile Include="Model\PrimeraVisitaModel.cs" />
+    <Compile Include="Model\PruebaComplementariasModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\IPacienteRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -166,7 +95,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Configuration\Owin\" />
-    <Folder Include="Repositories\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
