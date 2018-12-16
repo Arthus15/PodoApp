@@ -1,8 +1,15 @@
 ﻿using Autofac;
+using Autofac.Integration.Mvc;
+using PodoApp.Contracts.ServiceLibrary.Interfaces;
+using PodoApp.DB.Infrastructure;
+using PodoApp.DB.Infrastructure.Repositories;
+using PodoApp.Impl.ServiceLibrary;
+using PodoApp.Library.Repositories;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+
 
 namespace PodoApp.WebUI
 {
@@ -17,15 +24,30 @@ namespace PodoApp.WebUI
 
             //AutoFac Depency Injection
 
-            var builder = new ContainerBuilder();
-
+            var builder = new ContainerBuilder();       
             builder.Register(c => new HttpContextWrapper(HttpContext.Current) as HttpContextBase).As<HttpContextBase>().InstancePerLifetimeScope();
-            //builder.RegisterType<ApplicationUser>().As<IApplicationUser>();
-            //builder.RegisterType<ApplicationDbContext>().As<IApplicationDbContext>();
+            RegisterRepositories(builder);
+            RegisterServices(builder);
+            builder.RegisterControllers(typeof(MvcApplication).Assembly);
 
-            
+            var container = builder.Build();
 
-            builder.Build();
+            // Set MVC DI resolver to use our Autofac container
+            DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
+
         }
+
+        #region Private Methods
+        protected void RegisterServices(ContainerBuilder builder)
+        {
+            builder.RegisterType<PacienteService>().As<IPacienteService>();
+        }
+
+        private void RegisterRepositories(ContainerBuilder builder)
+        {
+            builder.RegisterType<PodologiaContext>().InstancePerRequest();
+            builder.RegisterType<PacienteRepository>().As<IPacienteRepository>();
+        }
+        #endregion
     }
 }

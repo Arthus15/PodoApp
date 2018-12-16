@@ -16,7 +16,6 @@ namespace PodoApp.WebUI.Areas.ListaPacientes
         {
             context.MapRoute(
                 "ListaPacientes_default",
-                "ListaPacientes_default",
                 "ListaPacientes/{controller}/{action}/{id}",
                 new { action = "Index", id = UrlParameter.Optional }
             );

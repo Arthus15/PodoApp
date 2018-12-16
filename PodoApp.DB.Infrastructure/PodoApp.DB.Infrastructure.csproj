@@ -162,6 +162,7 @@
     <Compile Include="Entities\tratamiento.cs" />
     <Compile Include="Entities\visionFrontal.cs" />
     <Compile Include="Entities\visionSagital.cs" />
+    <Compile Include="Mappers\PacienteMappers\PacienteMapper.cs" />
     <Compile Include="PodologiaContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\PacienteRepository.cs" />
