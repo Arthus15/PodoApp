@@ -20,7 +20,9 @@ namespace PodoApp.WebUI.Areas.ListaPacientes.Controllers
         // GET: ListaPacientes
         public ActionResult Index()
         {
-            return View(_pacienteService.GetAll().Select(x => x.DtoToViewModel()).ToList());
+            var pacientes = _pacienteService.GetAll().ToList();
+            var pacientesViewModel = pacientes.Select(x => x.DtoToViewModel());
+            return View(pacientesViewModel.ToList());
         }
     }
 }

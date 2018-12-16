@@ -5,6 +5,7 @@ using PodoApp.DB.Infrastructure;
 using PodoApp.DB.Infrastructure.Repositories;
 using PodoApp.Impl.ServiceLibrary;
 using PodoApp.Library.Repositories;
+using PodoApp.WebUI.Helpers;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
@@ -35,6 +36,13 @@ namespace PodoApp.WebUI
             // Set MVC DI resolver to use our Autofac container
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
 
+            //Register Custom view search routes
+            ViewEngines.Engines.Add(new RazorViewEngine
+            {
+                AreaPartialViewLocationFormats = new[] {"~/Areas/{1}/Views/{0}.cshtml"},
+                ViewLocationFormats = new[] {"~/Areas/{1}/Views/{0}.cshtml"},
+                PartialViewLocationFormats = new[] { "~/Areas/{1}/Views/{0}.cshtml" }
+            });
         }
 
         #region Private Methods

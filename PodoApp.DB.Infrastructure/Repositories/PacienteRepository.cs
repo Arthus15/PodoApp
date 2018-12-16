@@ -26,7 +26,8 @@ namespace PodoApp.DB.Infrastructure.Repositories
 
         public IEnumerable<PacienteModel> GetAll()
         {
-            return dbSet.Select(x => x.EntityToModel());
+            var pacientes = dbSet.ToList();
+            return pacientes.Select(x => x.EntityToModel());
         }
 
         public void Insert(PacienteModel model)

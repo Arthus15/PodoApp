@@ -10,7 +10,7 @@
             </li>
 
             <li class="@Html.isActive(controller: "ListaPacientes")">
-                <a href="@Url.Action("Index", "ListaPacientes")" title="Listado de pacientes">
+                <a href="@Url.Action("Index", "ListaPacientes", new { Area = "ListaPacientes" })" title="Listado de pacientes">
                     <em class="icon-list"></em>
                     <span>Listado de pacientes</span>
                 </a>
