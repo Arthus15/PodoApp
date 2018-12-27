@@ -53,8 +53,7 @@ namespace PodoApp.DB.Infrastructure.Mappers
                 dolorTipo = primeraVisita.dolorTipo,
                 fechaPrimeraConsulta = primeraVisita.fechaPrimeraConsulta,
                 hayDolor = primeraVisita.hayDolor,
-                peso = primeraVisita.peso,
-                diagnostico = primeraVisita.diagnostico.Select(x => x.ModelToEntity()).ToList()
+                peso = primeraVisita.peso
             };
         }
     }

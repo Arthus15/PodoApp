@@ -28,5 +28,24 @@ namespace PodoApp.Impl.ServiceLibrary.Mappers
                 fechaNacimiento = persona.fechaNacimiento
             };
         }
+
+        public static PersonaModel DtoToModel(this PersonaDto persona)
+        {
+            return new PersonaModel
+            {
+                idPersona = persona.idPersona,
+                nombre = persona.nombre,
+                apellido1 = persona.apellido1,
+                apellido2 = persona.apellido2,
+                calle = persona.calle,
+                ciudad = persona.ciudad,
+                dni = persona.dni,
+                edad = persona.edad,
+                telefono = persona.telefono,
+                profesion = persona.provincia,
+                pais = persona.pais,
+                fechaNacimiento = persona.fechaNacimiento
+            };
+        }
     }
 }

@@ -50,6 +50,7 @@ namespace PodoApp.WebUI
         protected void RegisterServices(ContainerBuilder builder)
         {
             builder.RegisterType<ListaPacienteService>().As<IListaPacienteService>();
+            builder.RegisterType<PacienteService>().As<IPacienteService>();
         }
 
         private void RegisterRepositories(ContainerBuilder builder)

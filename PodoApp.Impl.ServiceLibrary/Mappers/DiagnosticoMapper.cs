@@ -20,5 +20,16 @@ namespace PodoApp.Impl.ServiceLibrary.Mappers
                 anotaciones = diagnostico.anotaciones
             };
         }
+
+        public static DiagnosticoModel DtoToModel(this DiagnosticoDto diagnostico)
+        {
+            return new DiagnosticoModel
+            {
+                idDiagnostico = diagnostico.idDiagnostico,
+                id_primera_visita = diagnostico.id_primera_visita,
+                id_tratamiento = diagnostico.id_tratamiento,
+                anotaciones = diagnostico.anotaciones
+            };
+        }
     }
 }

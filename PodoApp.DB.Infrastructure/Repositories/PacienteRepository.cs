@@ -32,7 +32,8 @@ namespace PodoApp.DB.Infrastructure.Repositories
 
         public void Insert(PacienteModel model)
         {
-            throw new NotImplementedException();
+            var paciente = model.ModelToEntity();
+            Insert(paciente);
         }
 
         PacienteModel IBaseRepository<PacienteModel>.GetById(object id)

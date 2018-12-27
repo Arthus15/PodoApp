@@ -63,6 +63,7 @@
     <Compile Include="Dto\PodologoDto.cs" />
     <Compile Include="Dto\PrimeraVisitaDto.cs" />
     <Compile Include="Dto\PruebaComplementariasDto.cs" />
+    <Compile Include="Interfaces\IPacienteService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -25,5 +25,21 @@ namespace PodoApp.Impl.ServiceLibrary.Mappers
                 primeraVisita = paciente.primeraVisita.Select(x => x.ModelToDto()).ToList()
             };
         }
+
+        public static PacienteModel DtoToModel(this PacienteDto paciente)
+        {
+            return new PacienteModel
+            {
+                idPaciente = paciente.idPaciente,
+                medicacionHabitual = paciente.medicacionHabitual,
+                observacion = paciente.observacion,
+                id_podologo = paciente.id_podologo,
+                id_historial_clinico = paciente.id_historial_clinico,
+                id_persona = paciente.id_persona,
+                historialClinico = paciente.historialClinico.DtoToModel(),
+                persona = paciente.persona.DtoToModel(),
+                primeraVisita = paciente.primeraVisita.Select(x => x.DtoToModel()).ToList()
+            };
+        }
     }
 }
