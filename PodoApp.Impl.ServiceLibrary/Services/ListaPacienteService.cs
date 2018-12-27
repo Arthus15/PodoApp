@@ -4,16 +4,16 @@ using PodoApp.Library.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using PodoApp.Impl.ServiceLibrary.Mappers.PacienteMappers;
+using PodoApp.Impl.ServiceLibrary.Mappers;
 using PodoApp.Library.Model;
 
-namespace PodoApp.Impl.ServiceLibrary
+namespace PodoApp.Impl.ServiceLibrary.Services
 {
-    public class PacienteService : IPacienteService
+    public class ListaPacienteService : IListaPacienteService
     {
         private readonly IPacienteRepository _pacienteRepository;
 
-        public PacienteService(IPacienteRepository pacienteRepository)
+        public ListaPacienteService(IPacienteRepository pacienteRepository)
         {
             _pacienteRepository = pacienteRepository;
         }

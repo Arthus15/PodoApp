@@ -19,5 +19,25 @@ namespace PodoApp.WebUI.Areas.ListaPacientes.Models
 
         public Guid? id_persona { get; set; }
 
+        // Person Data
+
+        public string nombre { get; set; }
+
+        public string dni { get; set; }
+
+        // Clinic Historical
+
+        public Guid? IdAntFamiliares { get; set; }
+
+        public string numeroHistorialClinico { get; set; }
+
+        // First Visit
+        
+        public Guid? idPrimeraVisita { get; set; }
+
+        // Diagnostic
+
+        public Guid? idDiagnostico { get; set; }
+
     }
 }

@@ -18,3 +18,6 @@
 /PodoApp.WebUI/bin
 /PodoApp.Impl.ServiceLibrary.Test/obj/Debug
 /PodoApp.Database
+/PodoApp.Contracts.ServiceLibrary/obj/Release
+/PodoApp.DB.Infrastructure/obj/Release
+/PodoApp.DB.Infrastructure.Test/bin/Debug/es

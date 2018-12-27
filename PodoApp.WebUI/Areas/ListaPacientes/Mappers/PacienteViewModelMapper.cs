@@ -18,7 +18,14 @@ namespace PodoApp.WebUI.Areas.ListaPacientes.Mappers
                 observacion = paciente.observacion,
                 id_podologo = paciente.id_podologo,
                 id_historial_clinico = paciente.id_historial_clinico,
-                id_persona = paciente.id_persona
+                id_persona = paciente.id_persona,
+                IdAntFamiliares = paciente.historialClinico.id_ant_familiares,
+                idPrimeraVisita = paciente.primeraVisita.FirstOrDefault().idPrimeraVisita,
+                idDiagnostico = paciente.primeraVisita.FirstOrDefault().diagnostico.FirstOrDefault()?.idDiagnostico,
+                nombre = paciente.persona.nombre,
+                dni = paciente.persona.dni,
+                numeroHistorialClinico = paciente.historialClinico.numeroHistorialClinico
+
             };
         }
     }

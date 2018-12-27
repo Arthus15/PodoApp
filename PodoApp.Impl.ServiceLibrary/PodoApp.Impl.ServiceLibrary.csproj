@@ -79,8 +79,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configuration\Owin\ApplicationSignInManager.cs" />
-    <Compile Include="Mappers\PacienteMappers\PacienteMapper.cs" />
-    <Compile Include="PacienteService.cs" />
+    <Compile Include="Mappers\DiagnosticoMapper.cs" />
+    <Compile Include="Mappers\HistorialClinicoMapper.cs" />
+    <Compile Include="Mappers\PacienteMapper.cs" />
+    <Compile Include="Mappers\PersonaMapper.cs" />
+    <Compile Include="Mappers\PrimeraVisitaMapper.cs" />
+    <Compile Include="Services\ListaPacienteService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

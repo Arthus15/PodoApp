@@ -78,14 +78,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IBaseRepository.cs" />
+    <Compile Include="Model\AntecedentesFamiliaresModel.cs" />
+    <Compile Include="Model\AntecedentesFisiologicosModel.cs" />
+    <Compile Include="Model\AntecedentesPatologicosModel.cs" />
+    <Compile Include="Model\AntecedentesPodologicosModel.cs" />
+    <Compile Include="Model\CalzadoHabitualModel.cs" />
     <Compile Include="Model\ConsultaModel.cs" />
     <Compile Include="Model\DiagnosticoModel.cs" />
+    <Compile Include="Model\EstudioOrtopodologicoModel.cs" />
     <Compile Include="Model\HistorialClinicoModel.cs" />
     <Compile Include="Model\PacienteModel.cs" />
     <Compile Include="Model\PersonaModel.cs" />
     <Compile Include="Model\PodologoModel.cs" />
     <Compile Include="Model\PrimeraVisitaModel.cs" />
     <Compile Include="Model\PruebaComplementariasModel.cs" />
+    <Compile Include="Model\TipoEstudioModel.cs" />
+    <Compile Include="Model\TratamientoModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\IPacienteRepository.cs" />
   </ItemGroup>

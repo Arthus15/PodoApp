@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace PodoApp.Contracts.ServiceLibrary.Interfaces
 {
-    public interface IPacienteService
+    public interface IListaPacienteService
     {
         IEnumerable<PacienteDto> GetAll();
     }

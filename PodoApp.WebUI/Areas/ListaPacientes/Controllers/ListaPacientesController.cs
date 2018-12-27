@@ -5,14 +5,16 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using PodoApp.WebUI.Areas.ListaPacientes.Mappers;
+using PodoApp.Contracts.ServiceLibrary.Dto;
+using PodoApp.WebUI.Areas.ListaPacientes.Models;
 
 namespace PodoApp.WebUI.Areas.ListaPacientes.Controllers
 {
     public class ListaPacientesController : Controller
     {
-        private readonly IPacienteService _pacienteService;
+        private readonly IListaPacienteService _pacienteService;
 
-        public ListaPacientesController(IPacienteService pacienteService)
+        public ListaPacientesController(IListaPacienteService pacienteService)
         {
             _pacienteService = pacienteService;
         }
@@ -20,9 +22,9 @@ namespace PodoApp.WebUI.Areas.ListaPacientes.Controllers
         // GET: ListaPacientes
         public ActionResult Index()
         {
-            var pacientes = _pacienteService.GetAll().ToList();
-            var pacientesViewModel = pacientes.Select(x => x.DtoToViewModel());
-            return View(pacientesViewModel.ToList());
+            IEnumerable<PacienteDto> pacientes = _pacienteService.GetAll();
+            List<PacienteViewModel> pacientesViewModel = pacientes.Select(x => x.DtoToViewModel()).ToList();
+            return View(pacientesViewModel);
         }
     }
 }

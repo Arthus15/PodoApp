@@ -23,5 +23,11 @@ namespace PodoApp.Library.Model
         public ICollection<ConsultaModel> consulta { get; set; }
 
         public ICollection<PrimeraVisitaModel> primeraVisita { get; set; }
+
+        public HistorialClinicoModel historialClinico { get; set; }
+
+        public PersonaModel persona { get; set; }
+
+        public PodologoModel podologo { get; set; }
     }
 }

@@ -75,9 +75,7 @@ namespace PodoApp.WebUI.Areas.Login.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
-                    //return RedirectToLocal(returnUrl);
-                    //return RedirectToAction("PanelGeneral", "Dashboard");
-                    return RedirectToAction("Dashboard_v1", "Dashboard");
+                    return Redirect("~/Dashboard/Dashboard/Dashboard_v1");
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:

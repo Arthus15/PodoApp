@@ -7,7 +7,7 @@ using PodoApp.DB.Infrastructure.Entities;
 using PodoApp.Library;
 using PodoApp.Library.Model;
 using PodoApp.Library.Repositories;
-using PodoApp.DB.Infrastructure.Mappers.PacienteMappers;
+using PodoApp.DB.Infrastructure.Mappers;
 
 namespace PodoApp.DB.Infrastructure.Repositories
 {

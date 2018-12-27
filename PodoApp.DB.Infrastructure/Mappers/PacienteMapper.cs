@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PodoApp.DB.Infrastructure.Mappers.PacienteMappers
+namespace PodoApp.DB.Infrastructure.Mappers
 {
     public static class PacienteMapper
     {
@@ -19,7 +19,10 @@ namespace PodoApp.DB.Infrastructure.Mappers.PacienteMappers
                 observacion = paciente.observacion,
                 id_podologo = paciente.id_podologo,
                 id_historial_clinico = paciente.id_historial_clinico,
-                id_persona = paciente.id_persona
+                id_persona = paciente.id_persona,
+                persona = paciente.persona.EntityToModel(),
+                historialClinico = paciente.historialClinico.EntityToModel(),
+                primeraVisita = paciente.primeraVisita.Select(x => x.EntityToModel()).ToList()
             };
         }
 
@@ -32,7 +35,10 @@ namespace PodoApp.DB.Infrastructure.Mappers.PacienteMappers
                 observacion = paciente.observacion,
                 id_podologo = paciente.id_podologo,
                 id_historial_clinico = paciente.id_historial_clinico,
-                id_persona = paciente.id_persona
+                id_persona = paciente.id_persona,
+                persona = paciente.persona.ModelToEntity(),
+                historialClinico = paciente.historialClinico.ModelToEntity(),
+                primeraVisita = paciente.primeraVisita.Select(x => x.ModelToEntity()).ToList()
             };
         }
     }

@@ -43,38 +43,38 @@
             {
                 <tr>
                     <td>
-                        @Html.DisplayFor(modelItem => item.idPaciente)
+                        @Html.DisplayFor(modelItem => item.nombre)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.id_historial_clinico)
+                        @Html.DisplayFor(modelItem => item.dni)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.id_persona)
+                        @Html.DisplayFor(modelItem => item.numeroHistorialClinico)
                     </td>
                     <td>
-                        @if (false)
+                        @if (item.IdAntFamiliares == null)
 
                         {
                             <a href="@Url.Action("Create", "Antecedentes", new { idpaciente = item.idPaciente })">Añadir</a>
                         }
-                        @if (false)
+                        @if (item.IdAntFamiliares != null)
 
                         {
                             <a href="@Url.Action("Edit", "Antecedentes", new { idpaciente = item.idPaciente })">Editar</a>
                         }
                     </td>
                     <td>
-                        <a href="@Url.Action("Edit", "PrimeraVisita")">Editar</a>
+                        <a href="@Url.Action("Edit", "PrimeraVisita", new { idvisita = item.idPrimeraVisita})">Editar</a>
                     </td>
                     <td>
-                        @if (true)
+                        @if (item.idDiagnostico == null)
                         {
                             <a href="@Url.Action("Create", "DiagnosticoTratamiento", new { idpaciente = item.idPaciente })">Añadir</a>
                         }
-                        @if (false)
+                        @if (item.idDiagnostico != null)
                         {
 
-                            <a href="@Url.Action("Edit", "DiagnosticoTratamiento")">Editar</a>
+                            <a href="@Url.Action("Edit", "DiagnosticoTratamiento", new { iddiagnostico = item.idDiagnostico})">Editar</a>
                         }
                     </td>
                     <td>

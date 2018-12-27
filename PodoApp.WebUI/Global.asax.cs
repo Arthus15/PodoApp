@@ -4,6 +4,7 @@ using PodoApp.Contracts.ServiceLibrary.Interfaces;
 using PodoApp.DB.Infrastructure;
 using PodoApp.DB.Infrastructure.Repositories;
 using PodoApp.Impl.ServiceLibrary;
+using PodoApp.Impl.ServiceLibrary.Services;
 using PodoApp.Library.Repositories;
 using PodoApp.WebUI.Helpers;
 using System.Web;
@@ -48,7 +49,7 @@ namespace PodoApp.WebUI
         #region Private Methods
         protected void RegisterServices(ContainerBuilder builder)
         {
-            builder.RegisterType<PacienteService>().As<IPacienteService>();
+            builder.RegisterType<ListaPacienteService>().As<IListaPacienteService>();
         }
 
         private void RegisterRepositories(ContainerBuilder builder)

@@ -20,5 +20,11 @@ namespace PodoApp.Contracts.ServiceLibrary.Dto
         public ICollection<ConsultaDto> consulta { get; set; }
 
         public ICollection<PrimeraVisitaDto> primeraVisita { get; set; }
+
+        public HistorialClinicoDto historialClinico { get; set; }
+
+        public PersonaDto persona { get; set; }
+
+        public PodologoDto podologo { get; set; }
     }
 }
