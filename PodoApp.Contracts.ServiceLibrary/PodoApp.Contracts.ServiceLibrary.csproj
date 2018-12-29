@@ -54,6 +54,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dto\AntecedentesFamiliaresDto.cs" />
+    <Compile Include="Dto\AntecedentesFisiologicosDto.cs" />
+    <Compile Include="Dto\AntecedentesPatologicosDto.cs" />
+    <Compile Include="Dto\AntecedentesPodologicosDto.cs" />
+    <Compile Include="Interfaces\IAntecedentesService.cs" />
     <Compile Include="Interfaces\IListaPacienteService.cs" />
     <Compile Include="Dto\ConsultaDto.cs" />
     <Compile Include="Dto\DiagnosticoDto.cs" />

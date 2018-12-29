@@ -178,6 +178,10 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.cs" />
+    <Compile Include="Areas\Antecedentes\AntecedentesAreaRegistration.cs" />
+    <Compile Include="Areas\Antecedentes\Controllers\AntecedentesController.cs" />
+    <Compile Include="Areas\Antecedentes\Mappers\FormAntecedentesMapper.cs" />
+    <Compile Include="Areas\Antecedentes\Models\FormAntecedentes.cs" />
     <Compile Include="Areas\Dashboard\Controllers\DashboardController.cs" />
     <Compile Include="Areas\Dashboard\DashboardAreaRegistration.cs" />
     <Compile Include="Areas\ListaPacientes\Controllers\ListaPacientesController.cs" />
@@ -280,6 +284,10 @@
     <Content Include="Areas\ListaPacientes\Views\Index.cshtml" />
     <Content Include="Areas\Paciente\Views\web.config" />
     <Content Include="Areas\Paciente\Views\Create.cshtml" />
+    <Content Include="Areas\Paciente\Views\Edit.cshtml" />
+    <Content Include="Areas\Antecedentes\Views\web.config" />
+    <Content Include="Areas\Antecedentes\Views\Create.cshtml" />
+    <Content Include="Areas\Antecedentes\Views\Edit.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />

@@ -19,9 +19,21 @@ namespace PodoApp.Impl.ServiceLibrary.Services
             _pacienteRepository = pacienteRepository;
         }
 
-        public void InsertPacient(PacienteDto paciente)
+        public void Insert(PacienteDto paciente)
         {
             _pacienteRepository.Insert(paciente.DtoToModel());
+        }
+
+        public PacienteDto Get(Guid id)
+        {
+            var paciente = _pacienteRepository.GetById(id);
+
+            return paciente.ModelToDto();
+        }
+
+        public void Update(PacienteDto paciente)
+        {
+            _pacienteRepository.Update(paciente.DtoToModel());
         }
     }
 }

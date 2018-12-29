@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace PodoApp.Library.Model
+namespace PodoApp.Contracts.ServiceLibrary.Dto
 {
-    public class AntecedentesPatologicosModel
+    public class AntecedentesPatologicosDto
     {
         public Guid idAPatologico { get; set; }
 

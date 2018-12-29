@@ -7,11 +7,8 @@ using System.Threading.Tasks;
 
 namespace PodoApp.Contracts.ServiceLibrary.Interfaces
 {
-   public interface IPacienteService
+    public interface IAntecedentesService
     {
-        void Insert(PacienteDto paciente);
-        PacienteDto Get(Guid id);
-
-        void Update(PacienteDto paciente);
+        void Insert(HistorialClinicoDto historialClinico);
     }
 }

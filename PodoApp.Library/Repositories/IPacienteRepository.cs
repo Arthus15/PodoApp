@@ -6,5 +6,6 @@ namespace PodoApp.Library.Repositories
     public interface IPacienteRepository : IBaseRepository<PacienteModel>
     {
         IEnumerable<PacienteModel> GetAll();
+        PacienteModel GetById(object id);
     }
 }

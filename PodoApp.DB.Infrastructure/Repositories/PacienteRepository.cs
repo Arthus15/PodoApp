@@ -11,10 +11,10 @@ using PodoApp.DB.Infrastructure.Mappers;
 
 namespace PodoApp.DB.Infrastructure.Repositories
 {
-    public class PacienteRepository : BaseRepository<Paciente>, IPacienteRepository 
+    public class PacienteRepository : BaseRepository<Paciente>, IPacienteRepository
     {
         public PacienteRepository(PodologiaContext context) : base(context)
-        {}
+        { }
 
 
         #region Public Methods
@@ -36,11 +36,21 @@ namespace PodoApp.DB.Infrastructure.Repositories
             Insert(paciente);
         }
 
-        PacienteModel IBaseRepository<PacienteModel>.GetById(object id)
+        public void Update(PacienteModel model)
+        {
+            var modifyPaciente = model.ModelToEntity();
+            var paciente = dbSet.Find(modifyPaciente.idPaciente);
+            modifyPaciente.MapChanges(ref paciente);
+            Update(paciente);
+
+        }
+
+        PacienteModel IPacienteRepository.GetById(object id)
         {
             return GetById(id).EntityToModel();
         }
 
         #endregion
+
     }
 }

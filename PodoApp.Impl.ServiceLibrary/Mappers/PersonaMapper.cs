@@ -23,9 +23,10 @@ namespace PodoApp.Impl.ServiceLibrary.Mappers
                 dni = persona.dni,
                 edad = persona.edad,
                 telefono = persona.telefono,
-                profesion = persona.provincia,
+                profesion = persona.profesion,
                 pais = persona.pais,
-                fechaNacimiento = persona.fechaNacimiento
+                fechaNacimiento = persona.fechaNacimiento,
+                provincia = persona.provincia
             };
         }
 
@@ -42,9 +43,10 @@ namespace PodoApp.Impl.ServiceLibrary.Mappers
                 dni = persona.dni,
                 edad = persona.edad,
                 telefono = persona.telefono,
-                profesion = persona.provincia,
+                profesion = persona.profesion,
                 pais = persona.pais,
-                fechaNacimiento = persona.fechaNacimiento
+                fechaNacimiento = persona.fechaNacimiento,
+                provincia = persona.provincia
             };
         }
     }

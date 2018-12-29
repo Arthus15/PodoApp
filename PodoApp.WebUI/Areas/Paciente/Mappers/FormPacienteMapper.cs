@@ -32,7 +32,8 @@ namespace PodoApp.WebUI.Areas.Paciente.Mappers
                     provincia = form.Provincia,
                     pais = form.Pais,
                     telefono = form.Telefono,
-                    dni = form.Dni
+                    dni = form.Dni,
+                    ciudad = form.Ciudad
                 },
                 historialClinico = new HistorialClinicoDto
                 {
@@ -57,5 +58,33 @@ namespace PodoApp.WebUI.Areas.Paciente.Mappers
                 }
             };
         }
+
+        public static FormPaciente PacienteDtoToFormPaciente(this PacienteDto paciente)
+        {
+            PersonaDto persona = paciente.persona;
+            HistorialClinicoDto historial = paciente.historialClinico;
+
+            return new FormPaciente
+            {
+                IdPaciente = paciente.idPaciente,
+                MedicacionHabitual = paciente.medicacionHabitual,
+                Observacion = paciente.observacion,
+                NumeroHistoriaClinica = historial.numeroHistorialClinico,
+                IdPodologo = paciente.id_podologo,
+
+                Nombre = persona.nombre,
+                PrimerApellido = persona.apellido1,
+                SegundoApellido = persona.apellido2,
+                FechaNacimiento = persona.fechaNacimiento,
+                Edad = persona.edad,
+                Profesion = persona.profesion,
+                Direccion = persona.calle,
+                Ciudad = persona.ciudad,
+                Provincia = persona.provincia,
+                Pais = persona.pais,
+                Telefono = persona.telefono,
+                Dni = persona.dni,
+            };
+        }      
     }
 }

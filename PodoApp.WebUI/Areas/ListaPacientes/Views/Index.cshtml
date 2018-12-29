@@ -55,7 +55,7 @@
                         @if (item.IdAntFamiliares == null)
 
                         {
-                            <a href="@Url.Action("Create", "Antecedentes", new { idpaciente = item.idPaciente })">Añadir</a>
+                            <a href="@Url.Action("Create", "Antecedentes", new {Area = "Antecedentes", idpaciente = item.idPaciente })">Añadir</a>
                         }
                         @if (item.IdAntFamiliares != null)
 
@@ -83,7 +83,7 @@
                         <a href="@Url.Action("Index", "ListaConsultas", new { idpaciente = item.idPaciente})">Consultas</a>
                     </td>
                     <td>
-                        <a href="@Url.Action("Edit", "Paciente", new { idpaciente = item.idPaciente})">Editar</a>
+                        <a href="@Url.Action("Edit", "Paciente", new { Area = "Paciente" ,idpaciente = item.idPaciente})">Editar</a>
                     </td>
                 </tr>
             }

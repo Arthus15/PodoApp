@@ -79,11 +79,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configuration\Owin\ApplicationSignInManager.cs" />
+    <Compile Include="Mappers\AntecedentesFamiliaresMapper.cs" />
+    <Compile Include="Mappers\AntecedentesFisiologicosMapper.cs" />
+    <Compile Include="Mappers\AntecedentesPatologicosMapper.cs" />
+    <Compile Include="Mappers\AntecedentesPodologicosMapper.cs" />
     <Compile Include="Mappers\DiagnosticoMapper.cs" />
     <Compile Include="Mappers\HistorialClinicoMapper.cs" />
     <Compile Include="Mappers\PacienteMapper.cs" />
     <Compile Include="Mappers\PersonaMapper.cs" />
     <Compile Include="Mappers\PrimeraVisitaMapper.cs" />
+    <Compile Include="Services\AntecedentesService.cs" />
     <Compile Include="Services\ListaPacienteService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\PacienteService.cs" />

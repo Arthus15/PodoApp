@@ -81,6 +81,7 @@ namespace PodoApp.DB.Infrastructure.Abstracts
         {
             dbSet.Attach(entity);
             context.Entry(entity).State = EntityState.Modified;
+            context.SaveChanges();
         }
 
         #endregion
