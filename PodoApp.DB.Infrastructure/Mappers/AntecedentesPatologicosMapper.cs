@@ -62,23 +62,23 @@ namespace PodoApp.DB.Infrastructure.Mappers
 
         public static void MapChanges(this AntecedentesPatologicos source, ref AntecedentesPatologicos dest)
         {
-            source.patologiaPrevia = dest.patologiaPrevia;
-            source.enfermedadInfantil = dest.enfermedadInfantil;
-            source.antecedentesTraumatico = dest.antecedentesTraumatico;
-            source.bursitis = dest.bursitis;
-            source.capsulitis = dest.capsulitis;
-            source.enfermedadReumatica = dest.enfermedadReumatica;
-            source.tipoEnfermedadReumatica = dest.tipoEnfermedadReumatica;
-            source.ciatica = dest.ciatica;
-            source.otros = dest.otros;
-            source.distension = dest.distension;
-            source.esguince = dest.esguince;
-            source.tendinitis = dest.tendinitis;
-            source.contracturas = dest.contracturas;
-            source.luxacion = dest.luxacion;
-            source.subluxacion = dest.subluxacion;
-            source.fisura = dest.fisura;
-            source.fractura = dest.fractura;
+            dest.patologiaPrevia = source.patologiaPrevia;
+            dest.enfermedadInfantil = source.enfermedadInfantil;
+            dest.antecedentesTraumatico = source.antecedentesTraumatico;
+            dest.bursitis = source.bursitis;
+            dest.capsulitis = source.capsulitis;
+            dest.enfermedadReumatica = source.enfermedadReumatica;
+            dest.tipoEnfermedadReumatica = source.tipoEnfermedadReumatica;
+            dest.ciatica = source.ciatica;
+            dest.otros = source.otros;
+            dest.distension = source.distension;
+            dest.esguince = source.esguince;
+            dest.tendinitis = source.tendinitis;
+            dest.contracturas = source.contracturas;
+            dest.luxacion = source.luxacion;
+            dest.subluxacion = source.subluxacion;
+            dest.fisura = source.fisura;
+            dest.fractura = source.fractura;
         }
     }
 }

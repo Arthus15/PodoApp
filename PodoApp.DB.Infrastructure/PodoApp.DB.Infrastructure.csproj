@@ -177,6 +177,10 @@
     <Compile Include="Mappers\PrimeraVisitaMapper.cs" />
     <Compile Include="PodologiaContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\AntecedentesFamiliaresRepository.cs" />
+    <Compile Include="Repositories\AntecedentesFisiologicosRepository.cs" />
+    <Compile Include="Repositories\AntecedentesPatologicosRepository.cs" />
+    <Compile Include="Repositories\AntecedentesPodologicosRepository.cs" />
     <Compile Include="Repositories\HistorialClinicoRepository.cs" />
     <Compile Include="Repositories\PacienteRepository.cs" />
   </ItemGroup>

@@ -60,7 +60,7 @@
                         @if (item.IdAntFamiliares != null)
 
                         {
-                            <a href="@Url.Action("Edit", "Antecedentes", new { idpaciente = item.idPaciente })">Editar</a>
+                            <a href="@Url.Action("Edit", "Antecedentes", new {Area = "Antecedentes", idpaciente = item.idPaciente })">Editar</a>
                         }
                     </td>
                     <td>

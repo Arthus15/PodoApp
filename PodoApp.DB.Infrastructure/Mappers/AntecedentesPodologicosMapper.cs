@@ -32,8 +32,8 @@ namespace PodoApp.DB.Infrastructure.Mappers
 
         public static void MapChanges(this AntecedentesPodologicos source, ref AntecedentesPodologicos dest)
         {
-            source.haidoPodologo = dest.haidoPodologo;
-            source.antecedentes = dest.antecedentes;
+            dest.haidoPodologo = source.haidoPodologo;
+            dest.antecedentes = source.antecedentes;
         }
 
 

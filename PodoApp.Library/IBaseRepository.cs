@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace PodoApp.Library
 {
-    public interface IBaseRepository<TEntity> where TEntity : class
+    public interface IBaseRepository<TModel> where TModel : class
     {
-        void Insert(TEntity entity);
+        void Insert(TModel model);
 
-        void Delete(TEntity entity);
+        void Delete(TModel model);
 
-        void Update(TEntity entity);
+        void Update(TModel model);
      }
 }

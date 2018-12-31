@@ -10,5 +10,7 @@ namespace PodoApp.Contracts.ServiceLibrary.Interfaces
     public interface IAntecedentesService
     {
         void Insert(HistorialClinicoDto historialClinico);
+
+        void Update(HistorialClinicoDto historialClinico);
     }
 }

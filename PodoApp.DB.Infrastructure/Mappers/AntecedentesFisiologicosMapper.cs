@@ -50,17 +50,17 @@ namespace PodoApp.DB.Infrastructure.Mappers
 
         public static void MapChanges(this AntecedentesFisiologicos source, ref AntecedentesFisiologicos dest)
         {
-            source.andador = dest.andador;
-            source.tacata = dest.tacata;
-            source.inicioDeambulacion = dest?.inicioDeambulacion;
-            source.habitosPosturales = dest.habitosPosturales;
-            source.cambiosPonderales = dest?.cambiosPonderales;
-            source.zurdo = dest.zurdo;
-            source.diestro = dest.diestro;
-            source.ambidiestro = dest.ambidiestro;
-            source.otros = dest.otros;
-            source.partoCabeza = dest.partoCabeza;
-            source.partoNalgas = dest.partoNalgas;
+            dest.andador = source.andador;
+            dest.tacata = source.tacata;
+            dest.inicioDeambulacion = source?.inicioDeambulacion;
+            dest.habitosPosturales = source.habitosPosturales;
+            dest.cambiosPonderales = source?.cambiosPonderales;
+            dest.zurdo = source.zurdo;
+            dest.diestro = source.diestro;
+            dest.ambidiestro = source.ambidiestro;
+            dest.otros = source.otros;
+            dest.partoCabeza = source.partoCabeza;
+            dest.partoNalgas = source.partoNalgas;
         }
     }
 }

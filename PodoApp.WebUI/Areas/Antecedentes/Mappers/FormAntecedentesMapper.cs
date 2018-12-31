@@ -9,12 +9,27 @@ namespace PodoApp.WebUI.Areas.Antecedentes.Mappers
 {
     public static class FormAntecedentesMapper
     {
-        public static HistorialClinicoDto FormToHistorialClinicoDto(this FormAntecedentes form)
+        private static Guid nuevoIdPodo = Guid.Empty;
+        private static Guid nuevoIdFam = Guid.Empty;
+        private static Guid nuevoIdFisio = Guid.Empty;
+        private static Guid nuevoIdPato = Guid.Empty;
+
+        public static HistorialClinicoDto FormToHistorialClinicoDto(this FormAntecedentes form, bool newForm = true)
         {
-            var nuevoIdPodo = Guid.NewGuid();
-            var nuevoIdFam = Guid.NewGuid();
-            var nuevoIdFisio = Guid.NewGuid();
-            var nuevoIdPato = Guid.NewGuid();
+            if (newForm)
+            {
+                nuevoIdPodo = Guid.NewGuid();
+                nuevoIdPato = Guid.NewGuid();
+                nuevoIdFisio = Guid.NewGuid();
+                nuevoIdFam = Guid.NewGuid();
+            }
+            else
+            {
+                nuevoIdFam = (Guid)form.IdAntFamiliares;
+                nuevoIdFisio = (Guid)form.IdAntFisiologicos;
+                nuevoIdPato = (Guid)form.IdAntPatologicos;
+                nuevoIdPodo = (Guid)form.IdAntPodologicos;
+            }
 
             return new HistorialClinicoDto
             {
@@ -46,7 +61,8 @@ namespace PodoApp.WebUI.Areas.Antecedentes.Mappers
                     luxacion = form.Luxacion,
                     subluxacion = form.Subluxacion,
                     fisura = form.Fisura,
-                    fractura = form.Fractura
+                    fractura = form.Fractura,
+                    patologiaPrevia = form.PatologiaPrevia
                 },
                 antecedentesFamiliares = new AntecedentesFamiliaresDto
                 {
@@ -68,6 +84,7 @@ namespace PodoApp.WebUI.Areas.Antecedentes.Mappers
                 },
                 antecedentesFisiologicos = new AntecedentesFisiologicosDto
                 {
+                    idAFisiologico = nuevoIdFisio,
                     andador = form.Andador,
                     tacata = form.Tacata,
                     inicioDeambulacion = form.InicioDeambulacion,
@@ -80,6 +97,76 @@ namespace PodoApp.WebUI.Areas.Antecedentes.Mappers
                     partoCabeza = form.PartoCabeza,
                     partoNalgas = form.PartoNalgas
                 }
+            };
+        }
+
+        public static FormAntecedentes FillForm(this HistorialClinicoDto historial)
+        {
+            AntecedentesFamiliaresDto familiares = historial.antecedentesFamiliares;
+            AntecedentesFisiologicosDto fisiologicos = historial.antecedentesFisiologicos;
+            AntecedentesPatologicosDto patologicos = historial.antecedentesPatologicos;
+            AntecedentesPodologicosDto podologicos = historial.antecedentesPodologicos;
+
+            return new FormAntecedentes
+            {
+                // historial
+                IdHistorialClinico = historial.idHistorialClinico,
+
+                // podológicos
+                IdAntPodologicos = historial.id_ant_podologicos,
+                HaIdoPodologo = podologicos.haidoPodologo,
+                Antecedentes = podologicos.antecedentes,
+
+                // patológicos
+                IdAntPatologicos = historial.id_ant_patologicos,
+                PatologiaPrevia = patologicos.patologiaPrevia,
+                EnfermedadInfantil = patologicos.enfermedadInfantil,
+                AntecedentesTraumaticos = patologicos.antecedentesTraumatico,
+                Bursitis = patologicos.bursitis,
+                Capsulitis = patologicos.capsulitis,
+                EnfermedadReumatica = patologicos.enfermedadReumatica,
+                TipoEnfermedadReumatica = patologicos.tipoEnfermedadReumatica,
+                Ciatica = patologicos.ciatica,
+                Distension = patologicos.distension,
+                Esguince = patologicos.esguince,
+                Tendinitis = patologicos.tendinitis,
+                Contracturas = patologicos.contracturas,
+                Luxacion = patologicos.luxacion,
+                Subluxacion = patologicos.subluxacion,
+                Fisura = patologicos.fisura,
+                Fractura = patologicos.fractura,
+                OtrosPatologico = patologicos.otros,
+
+                // fisiológicos
+                IdAntFisiologicos = historial.id_ant_fisiologicos,
+                Andador = fisiologicos.andador,
+                Tacata = fisiologicos.tacata,
+                InicioDeambulacion = fisiologicos.inicioDeambulacion,
+                HabitosPosturales = fisiologicos.habitosPosturales,
+                CambiosPonderales = fisiologicos.cambiosPonderales,
+                Zurdo = fisiologicos.zurdo,
+                Diestro = fisiologicos.diestro,
+                Ambidiestro = fisiologicos.ambidiestro,
+                PartoCabeza = fisiologicos.partoCabeza,
+                PartoNalgas = fisiologicos.partoNalgas,
+                OtrosFisiologico = fisiologicos.otros,
+
+                // familiares
+                IdAntFamiliares = historial.id_ant_familiares,
+                Dismetrias = familiares.dismetrias,
+                Escoliosis = familiares.escoliosis,
+                TibiasVaras = familiares.tibiasVaras,
+                PiesPlanos = familiares.piesPlanos,
+                PiesCavos = familiares.piesCavos,
+                PiesValgos = familiares.piesValgos,
+                PiesZambos = familiares.piesZambos,
+                HallusValgus = familiares.hallusValgus,
+                DedosGarra = familiares.dedosGarra,
+                GenuVaro = familiares.genuVaro,
+                GenuValgo = familiares.genuValgo,
+                MetaAductus = familiares.metaAductus,
+                MetaVarus = familiares.metaVarus,
+                OtrosFamiliares = familiares.otros
             };
         }
     }

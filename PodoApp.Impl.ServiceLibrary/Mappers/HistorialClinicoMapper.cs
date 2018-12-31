@@ -12,11 +12,6 @@ namespace PodoApp.Impl.ServiceLibrary.Mappers
     {
         public static HistorialClinicoDto ModelToDto(this HistorialClinicoModel historialClinico)
         {
-            var antecedentesFamiliares = historialClinico?.antecedentesFamiliares.ModelToDto();
-            var antecedentesFisiologicos = historialClinico?.antecedentesFisiologicos.ModelToDto();
-            var antecedentesPatologicos = historialClinico?.antecedentesPatologicos.ModelToDto();
-            var antecedentesPodologicos = historialClinico?.antecedentesPodologicos.ModelToDto();
-
             return new HistorialClinicoDto
             {
                 idHistorialClinico = historialClinico.idHistorialClinico,
@@ -26,21 +21,16 @@ namespace PodoApp.Impl.ServiceLibrary.Mappers
                 id_ant_podologicos = historialClinico?.id_ant_podologicos,
                 numeroHistorialClinico = historialClinico.numeroHistorialClinico,
                 id_estudio = historialClinico.id_estudio,
-                antecedentesFamiliares = antecedentesFamiliares,
-                antecedentesFisiologicos = antecedentesFisiologicos,
-                antecedentesPodologicos = antecedentesPodologicos,
-                antecedentesPatologicos = antecedentesPatologicos
-                
+                antecedentesFamiliares = historialClinico.antecedentesFamiliares?.ModelToDto(),
+                antecedentesFisiologicos = historialClinico.antecedentesFisiologicos?.ModelToDto(),
+                antecedentesPatologicos = historialClinico.antecedentesPatologicos?.ModelToDto(),
+                antecedentesPodologicos = historialClinico.antecedentesPodologicos?.ModelToDto()
+
             };
         }
-        
+
         public static HistorialClinicoModel DtoToModel(this HistorialClinicoDto historialClinico)
         {
-            var antecedentesFamiliares = historialClinico?.antecedentesFamiliares.DtoToModel();
-            var antecedentesFisiologicos = historialClinico?.antecedentesFisiologicos.DtoToModel();
-            var antecedentesPatologicos = historialClinico?.antecedentesPatologicos.DtoToModel();
-            var antecedentesPodologicos = historialClinico?.antecedentesPodologicos.DtoToModel();
-
             return new HistorialClinicoModel
             {
                 idHistorialClinico = historialClinico.idHistorialClinico,
@@ -50,10 +40,10 @@ namespace PodoApp.Impl.ServiceLibrary.Mappers
                 id_ant_podologicos = historialClinico?.id_ant_podologicos,
                 numeroHistorialClinico = historialClinico.numeroHistorialClinico,
                 id_estudio = historialClinico.id_estudio,
-                antecedentesFamiliares = antecedentesFamiliares,
-                antecedentesFisiologicos = antecedentesFisiologicos,
-                antecedentesPodologicos = antecedentesPodologicos,
-                antecedentesPatologicos = antecedentesPatologicos
+                antecedentesFamiliares = historialClinico.antecedentesFamiliares?.DtoToModel(),
+                antecedentesFisiologicos = historialClinico.antecedentesFisiologicos?.DtoToModel(),
+                antecedentesPatologicos = historialClinico.antecedentesPatologicos?.DtoToModel(),
+                antecedentesPodologicos = historialClinico.antecedentesPodologicos?.DtoToModel()
 
             };
         }
