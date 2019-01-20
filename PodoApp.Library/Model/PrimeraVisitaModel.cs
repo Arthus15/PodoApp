@@ -25,12 +25,7 @@ namespace PodoApp.Library.Model
         public Guid? id_calzado_habitual { get; set; }
 
         public ICollection<DiagnosticoModel> diagnostico { get; set; }
-        public ICollection<PruebaComplementariasModel> pruebasComplementarias { get; set; }
-
         public CalzadoHabitualModel calzadoHabitual { get; set; }
-        public EstudioOrtopodologicoModel estudioOrtopodologico { get; set; }
-        public PacienteModel paciente { get; set; }
-        public PodologoModel podologo { get; set; }
-        public TipoEstudioModel tipoEstudio { get; set; }
+
     }
 }

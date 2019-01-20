@@ -195,6 +195,10 @@
     <Compile Include="Areas\Paciente\Mappers\FormPacienteMapper.cs" />
     <Compile Include="Areas\Paciente\Models\FormPaciente.cs" />
     <Compile Include="Areas\Paciente\PacienteAreaRegistration.cs" />
+    <Compile Include="Areas\PrimeraVisita\Controllers\PrimeraVisitaController.cs" />
+    <Compile Include="Areas\PrimeraVisita\Mappers\FormPrimeraVisitaMapper.cs" />
+    <Compile Include="Areas\PrimeraVisita\Models\FormPrimeraVisita.cs" />
+    <Compile Include="Areas\PrimeraVisita\PrimeraVisitaAreaRegistration.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -288,6 +292,9 @@
     <Content Include="Areas\Antecedentes\Views\web.config" />
     <Content Include="Areas\Antecedentes\Views\Create.cshtml" />
     <Content Include="Areas\Antecedentes\Views\Edit.cshtml" />
+    <Content Include="Areas\PrimeraVisita\Views\web.config" />
+    <Content Include="Areas\PrimeraVisita\Views\Create.cshtml" />
+    <Content Include="Areas\PrimeraVisita\Views\Edit.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />

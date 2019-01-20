@@ -83,15 +83,18 @@
     <Compile Include="Mappers\AntecedentesFisiologicosMapper.cs" />
     <Compile Include="Mappers\AntecedentesPatologicosMapper.cs" />
     <Compile Include="Mappers\AntecedentesPodologicosMapper.cs" />
+    <Compile Include="Mappers\CalzadoHabitualMapper.cs" />
     <Compile Include="Mappers\DiagnosticoMapper.cs" />
     <Compile Include="Mappers\HistorialClinicoMapper.cs" />
     <Compile Include="Mappers\PacienteMapper.cs" />
     <Compile Include="Mappers\PersonaMapper.cs" />
+    <Compile Include="Mappers\PodologoMapper.cs" />
     <Compile Include="Mappers\PrimeraVisitaMapper.cs" />
     <Compile Include="Services\AntecedentesService.cs" />
     <Compile Include="Services\ListaPacienteService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\PacienteService.cs" />
+    <Compile Include="Services\PrimeraVisitaService.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

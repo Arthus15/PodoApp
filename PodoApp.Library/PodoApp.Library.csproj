@@ -99,8 +99,12 @@
     <Compile Include="Repositories\IAntecedentesFamiliaresRepository.cs" />
     <Compile Include="Repositories\IAntecedentesPatologicosRepository.cs" />
     <Compile Include="Repositories\IAntecedentesPodologicosRepository.cs" />
+    <Compile Include="Repositories\ICalzadoHabitualRepository.cs" />
     <Compile Include="Repositories\IHistorialClínicoRepository.cs" />
     <Compile Include="Repositories\IPacienteRepository.cs" />
+    <Compile Include="Repositories\IPersonaRepository.cs" />
+    <Compile Include="Repositories\IPodologoRepository.cs" />
+    <Compile Include="Repositories\IPrimeraVisitaRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

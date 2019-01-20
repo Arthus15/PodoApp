@@ -15,6 +15,7 @@ namespace PodoApp.WebUI.Areas.Paciente.Mappers
             var nuevoIdHistorial = Guid.NewGuid();
             var nuevoIdPV = Guid.NewGuid();
             var nuevoIdPaciente = Guid.NewGuid();
+            var nuevoIdCalzadoHabitual = Guid.NewGuid();
 
             return new PacienteDto
             {
@@ -53,7 +54,17 @@ namespace PodoApp.WebUI.Areas.Paciente.Mappers
                     hayDolor = false,
                     fechaPrimeraConsulta = DateTime.Now,
                     id_paciente = nuevoIdPaciente,
-                    id_historial_clinico = nuevoIdHistorial
+                    id_historial_clinico = nuevoIdHistorial,
+                    id_calzado_habitual = nuevoIdCalzadoHabitual,
+                    calzadoHabitual = new CalzadoHabitualDto
+                    {
+                        botines = false,
+                        tacones = false,
+                        deportivos = false,
+                        idCalzado = nuevoIdCalzadoHabitual,
+                        sandalias = false,
+                        vestir = false
+                    }
                 }
                 }
             };
@@ -85,6 +96,6 @@ namespace PodoApp.WebUI.Areas.Paciente.Mappers
                 Telefono = persona.telefono,
                 Dni = persona.dni,
             };
-        }      
+        }
     }
 }

@@ -170,10 +170,12 @@
     <Compile Include="Mappers\AntecedentesFisiologicosMapper.cs" />
     <Compile Include="Mappers\AntecedentesPatologicosMapper.cs" />
     <Compile Include="Mappers\AntecedentesPodologicosMapper.cs" />
+    <Compile Include="Mappers\CalzadoHabitualMapper.cs" />
     <Compile Include="Mappers\DiagnosticoMapper.cs" />
     <Compile Include="Mappers\HistorialClinicoMapper.cs" />
     <Compile Include="Mappers\PacienteMapper.cs" />
     <Compile Include="Mappers\PersonaMapper.cs" />
+    <Compile Include="Mappers\PodologoMapper.cs" />
     <Compile Include="Mappers\PrimeraVisitaMapper.cs" />
     <Compile Include="PodologiaContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -181,8 +183,12 @@
     <Compile Include="Repositories\AntecedentesFisiologicosRepository.cs" />
     <Compile Include="Repositories\AntecedentesPatologicosRepository.cs" />
     <Compile Include="Repositories\AntecedentesPodologicosRepository.cs" />
+    <Compile Include="Repositories\CalzadoHabitualRepository.cs" />
     <Compile Include="Repositories\HistorialClinicoRepository.cs" />
     <Compile Include="Repositories\PacienteRepository.cs" />
+    <Compile Include="Repositories\PersonaRepository.cs" />
+    <Compile Include="Repositories\PodologoRepository.cs" />
+    <Compile Include="Repositories\PrimeraVisitaRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PodoApp.Library\PodoApp.Library.csproj">

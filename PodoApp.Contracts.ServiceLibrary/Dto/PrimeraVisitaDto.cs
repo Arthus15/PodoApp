@@ -24,7 +24,10 @@ namespace PodoApp.Contracts.ServiceLibrary.Dto
         public Guid? id_estudio_ortopodologico { get; set; }
         public Guid? id_calzado_habitual { get; set; }
 
-        public virtual ICollection<DiagnosticoDto> diagnostico { get; set; }
-        public virtual ICollection<PruebaComplementariasDto> pruebasComplementarias { get; set; }
+        public ICollection<DiagnosticoDto> diagnostico { get; set; }
+        public ICollection<PruebaComplementariasDto> pruebasComplementarias { get; set; }
+        public CalzadoHabitualDto calzadoHabitual { get; set; }
+
+
     }
 }

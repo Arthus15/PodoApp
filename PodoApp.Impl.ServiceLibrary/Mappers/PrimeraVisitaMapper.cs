@@ -30,7 +30,10 @@ namespace PodoApp.Impl.ServiceLibrary.Mappers
                 fechaPrimeraConsulta = primeraVisita.fechaPrimeraConsulta,
                 hayDolor = primeraVisita.hayDolor,
                 peso = primeraVisita.peso,
-                diagnostico = primeraVisita.diagnostico.Select(x => x.ModelToDto()).ToList()
+                talla = primeraVisita.talla,
+                tipoAlergias = primeraVisita.tipoAlergias,
+                diagnostico = primeraVisita.diagnostico.Select(x => x.ModelToDto()).ToList(),
+                calzadoHabitual = primeraVisita.calzadoHabitual?.ModelToDto()
             };
         }
 
@@ -53,7 +56,10 @@ namespace PodoApp.Impl.ServiceLibrary.Mappers
                 dolorTipo = primeraVisita.dolorTipo,
                 fechaPrimeraConsulta = primeraVisita.fechaPrimeraConsulta,
                 hayDolor = primeraVisita.hayDolor,
-                peso = primeraVisita.peso               
+                peso = primeraVisita.peso,
+                talla = primeraVisita.talla,
+                tipoAlergias = primeraVisita.tipoAlergias,                
+                calzadoHabitual = primeraVisita.calzadoHabitual.DtoToModel()
             };
         }
     }

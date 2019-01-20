@@ -13,5 +13,7 @@ namespace PodoApp.Contracts.ServiceLibrary.Interfaces
         PacienteDto Get(Guid id);
 
         void Update(PacienteDto paciente);
+
+        bool Exists(Guid idPaciente);
     }
 }

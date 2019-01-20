@@ -1,4 +1,5 @@
 ﻿using PodoApp.Library.Model;
+using System;
 using System.Collections.Generic;
 
 namespace PodoApp.Library.Repositories
@@ -7,5 +8,7 @@ namespace PodoApp.Library.Repositories
     {
         IEnumerable<PacienteModel> GetAll();
         PacienteModel GetById(object id);
+
+        bool Exists(Guid idPaciente);
     }
 }

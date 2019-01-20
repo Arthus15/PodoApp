@@ -50,6 +50,18 @@ namespace PodoApp.DB.Infrastructure.Repositories
             return GetById(id).EntityToModel();
         }
 
+        public bool Exists(Guid idPaciente)
+        {
+            PacienteModel paciente = GetById(idPaciente).EntityToModel();
+
+            if (paciente == null)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
         #endregion
 
     }

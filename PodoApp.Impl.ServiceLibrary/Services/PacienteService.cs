@@ -35,5 +35,10 @@ namespace PodoApp.Impl.ServiceLibrary.Services
         {
             _pacienteRepository.Update(paciente.DtoToModel());
         }
+
+        public bool Exists(Guid idPaciente)
+        {
+            return _pacienteRepository.Exists(idPaciente);
+        }
     }
 }

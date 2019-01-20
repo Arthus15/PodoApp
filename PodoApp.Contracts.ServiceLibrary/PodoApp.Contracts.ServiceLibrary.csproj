@@ -58,6 +58,8 @@
     <Compile Include="Dto\AntecedentesFisiologicosDto.cs" />
     <Compile Include="Dto\AntecedentesPatologicosDto.cs" />
     <Compile Include="Dto\AntecedentesPodologicosDto.cs" />
+    <Compile Include="Dto\CalzadoHabitualDto.cs" />
+    <Compile Include="HelpersDto\PodologoHelperDto.cs" />
     <Compile Include="Interfaces\IAntecedentesService.cs" />
     <Compile Include="Interfaces\IListaPacienteService.cs" />
     <Compile Include="Dto\ConsultaDto.cs" />
@@ -69,6 +71,7 @@
     <Compile Include="Dto\PrimeraVisitaDto.cs" />
     <Compile Include="Dto\PruebaComplementariasDto.cs" />
     <Compile Include="Interfaces\IPacienteService.cs" />
+    <Compile Include="Interfaces\IPrimeraVisitaService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

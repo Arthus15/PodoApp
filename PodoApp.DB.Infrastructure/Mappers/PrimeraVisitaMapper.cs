@@ -30,7 +30,10 @@ namespace PodoApp.DB.Infrastructure.Mappers
                 fechaPrimeraConsulta = primeraVisita.fechaPrimeraConsulta,
                 hayDolor = primeraVisita.hayDolor,
                 peso = primeraVisita.peso,
-                diagnostico = primeraVisita.diagnostico.Select(x => x.EntityToModel()).ToList()
+                tipoAlergias = primeraVisita.tipoAlergias,
+                talla = primeraVisita.talla,
+                diagnostico = primeraVisita.diagnostico.Select(x => x.EntityToModel()).ToList(),
+                calzadoHabitual = primeraVisita.calzadoHabitual?.EntityToModel()
             };
         }
 
@@ -53,8 +56,32 @@ namespace PodoApp.DB.Infrastructure.Mappers
                 dolorTipo = primeraVisita.dolorTipo,
                 fechaPrimeraConsulta = primeraVisita.fechaPrimeraConsulta,
                 hayDolor = primeraVisita.hayDolor,
-                peso = primeraVisita.peso
+                peso = primeraVisita.peso,
+                talla = primeraVisita.talla,
+                tipoAlergias = primeraVisita.tipoAlergias,
+                calzadoHabitual = primeraVisita.calzadoHabitual.ModelToEntity()
             };
+        }
+
+        public static void MapChanges(this PrimeraVisita newPrimeraVisita, ref PrimeraVisita oldPrimeraVisita)
+        {
+            oldPrimeraVisita.id_calzado_habitual = newPrimeraVisita.id_calzado_habitual;
+            oldPrimeraVisita.id_estudio_ortopodologico = newPrimeraVisita.id_estudio_ortopodologico;
+            oldPrimeraVisita.id_historial_clinico = newPrimeraVisita.id_historial_clinico;
+            oldPrimeraVisita.id_paciente = newPrimeraVisita.id_paciente;
+            oldPrimeraVisita.id_podologo = newPrimeraVisita.id_podologo;
+            oldPrimeraVisita.id_tipo_estudio = newPrimeraVisita.id_tipo_estudio;
+            oldPrimeraVisita.motivoPrimeraConsulta = newPrimeraVisita.motivoPrimeraConsulta;
+            oldPrimeraVisita.actividadDeportiva = newPrimeraVisita.actividadDeportiva;
+            oldPrimeraVisita.alergias = newPrimeraVisita.alergias;
+            oldPrimeraVisita.diabetes = newPrimeraVisita.diabetes;
+            oldPrimeraVisita.dolorSitio = newPrimeraVisita.dolorSitio;
+            oldPrimeraVisita.dolorTipo = newPrimeraVisita.dolorTipo;
+            oldPrimeraVisita.fechaPrimeraConsulta = newPrimeraVisita.fechaPrimeraConsulta;
+            oldPrimeraVisita.hayDolor = newPrimeraVisita.hayDolor;
+            oldPrimeraVisita.peso = newPrimeraVisita.peso;
+            oldPrimeraVisita.tipoAlergias = newPrimeraVisita.tipoAlergias;
+            oldPrimeraVisita.talla = newPrimeraVisita.talla;
         }
     }
 }

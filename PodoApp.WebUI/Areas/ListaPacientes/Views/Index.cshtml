@@ -64,7 +64,7 @@
                         }
                     </td>
                     <td>
-                        <a href="@Url.Action("Edit", "PrimeraVisita", new { idvisita = item.idPrimeraVisita})">Editar</a>
+                        <a href="@Url.Action("Edit", "PrimeraVisita", new {Area = "PrimeraVisita", idvisita = item.idPrimeraVisita})">Editar</a>
                     </td>
                     <td>
                         @if (item.idDiagnostico == null)
