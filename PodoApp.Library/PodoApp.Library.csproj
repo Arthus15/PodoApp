@@ -87,6 +87,7 @@
     <Compile Include="Model\DiagnosticoModel.cs" />
     <Compile Include="Model\EstudioOrtopodologicoModel.cs" />
     <Compile Include="Model\HistorialClinicoModel.cs" />
+    <Compile Include="Model\MaterialSoportePlantarModel.cs" />
     <Compile Include="Model\PacienteModel.cs" />
     <Compile Include="Model\PersonaModel.cs" />
     <Compile Include="Model\PodologoModel.cs" />
@@ -100,11 +101,14 @@
     <Compile Include="Repositories\IAntecedentesPatologicosRepository.cs" />
     <Compile Include="Repositories\IAntecedentesPodologicosRepository.cs" />
     <Compile Include="Repositories\ICalzadoHabitualRepository.cs" />
+    <Compile Include="Repositories\IDiagnosticoRepository.cs" />
     <Compile Include="Repositories\IHistorialClínicoRepository.cs" />
+    <Compile Include="Repositories\IMaterialSoportePlantarRepository.cs" />
     <Compile Include="Repositories\IPacienteRepository.cs" />
     <Compile Include="Repositories\IPersonaRepository.cs" />
     <Compile Include="Repositories\IPodologoRepository.cs" />
     <Compile Include="Repositories\IPrimeraVisitaRepository.cs" />
+    <Compile Include="Repositories\ITratamientoRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

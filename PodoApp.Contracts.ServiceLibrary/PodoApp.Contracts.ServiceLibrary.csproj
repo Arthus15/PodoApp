@@ -59,8 +59,11 @@
     <Compile Include="Dto\AntecedentesPatologicosDto.cs" />
     <Compile Include="Dto\AntecedentesPodologicosDto.cs" />
     <Compile Include="Dto\CalzadoHabitualDto.cs" />
+    <Compile Include="Dto\MaterialSoportePlantarDto.cs" />
+    <Compile Include="Dto\TratamientoDto.cs" />
     <Compile Include="HelpersDto\PodologoHelperDto.cs" />
     <Compile Include="Interfaces\IAntecedentesService.cs" />
+    <Compile Include="Interfaces\IDiagnosticoTratamientoService.cs" />
     <Compile Include="Interfaces\IListaPacienteService.cs" />
     <Compile Include="Dto\ConsultaDto.cs" />
     <Compile Include="Dto\DiagnosticoDto.cs" />

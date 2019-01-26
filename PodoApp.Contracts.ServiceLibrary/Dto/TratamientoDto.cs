@@ -1,8 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace PodoApp.Library.Model
+namespace PodoApp.Contracts.ServiceLibrary.Dto
 {
-    public class TratamientoModel
+    public class TratamientoDto
     {
         public Guid idTratamiento { get; set; }
         public bool fisico { get; set; }

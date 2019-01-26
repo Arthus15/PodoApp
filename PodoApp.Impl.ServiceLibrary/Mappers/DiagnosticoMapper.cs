@@ -17,7 +17,8 @@ namespace PodoApp.Impl.ServiceLibrary.Mappers
                 idDiagnostico = diagnostico.idDiagnostico,
                 id_primera_visita = diagnostico.id_primera_visita,
                 id_tratamiento = diagnostico.id_tratamiento,
-                anotaciones = diagnostico.anotaciones
+                anotaciones = diagnostico.anotaciones,
+                Tratamiento = diagnostico.tratamiento?.ModelToDto()
             };
         }
 

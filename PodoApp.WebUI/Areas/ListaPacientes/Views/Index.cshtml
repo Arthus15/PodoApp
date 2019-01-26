@@ -69,12 +69,12 @@
                     <td>
                         @if (item.idDiagnostico == null)
                         {
-                            <a href="@Url.Action("Create", "DiagnosticoTratamiento", new { idpaciente = item.idPaciente })">Añadir</a>
+                            <a href="@Url.Action("Create", "DiagnosticoTratamiento", new {Area = "DiagnosticoTratamiento", idpaciente = item.idPaciente })">Añadir</a>
                         }
                         @if (item.idDiagnostico != null)
                         {
 
-                            <a href="@Url.Action("Edit", "DiagnosticoTratamiento", new { iddiagnostico = item.idDiagnostico})">Editar</a>
+                            <a href="@Url.Action("Edit", "DiagnosticoTratamiento", new {Area = "DiagnosticoTratamiento", iddiagnostico = item.idDiagnostico})">Editar</a>
                         }
                     </td>
                     <td>
