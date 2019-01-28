@@ -78,9 +78,9 @@
                         }
                     </td>
                     <td>
-                        <a href="@Url.Action("Create", "Consulta", new { idpaciente = item.idPaciente})">Añadir</a>
+                        <a href="@Url.Action("Create", "Consulta", new {Area = "Consulta", idpaciente = item.idPaciente})">Añadir</a>
                         <br />
-                        <a href="@Url.Action("Index", "ListaConsultas", new { idpaciente = item.idPaciente})">Consultas</a>
+                        <a href="@Url.Action("Index", "Consulta", new {Area = "Consulta", idpaciente = item.idPaciente})">Consultas</a>
                     </td>
                     <td>
                         <a href="@Url.Action("Edit", "Paciente", new { Area = "Paciente" ,idpaciente = item.idPaciente})">Editar</a>

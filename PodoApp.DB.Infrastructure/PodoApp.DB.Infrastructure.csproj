@@ -171,6 +171,7 @@
     <Compile Include="Mappers\AntecedentesPatologicosMapper.cs" />
     <Compile Include="Mappers\AntecedentesPodologicosMapper.cs" />
     <Compile Include="Mappers\CalzadoHabitualMapper.cs" />
+    <Compile Include="Mappers\ConsultaMapper.cs" />
     <Compile Include="Mappers\DiagnosticoMapper.cs" />
     <Compile Include="Mappers\HistorialClinicoMapper.cs" />
     <Compile Include="Mappers\MaterialSoportePlantarMapper.cs" />
@@ -186,6 +187,7 @@
     <Compile Include="Repositories\AntecedentesPatologicosRepository.cs" />
     <Compile Include="Repositories\AntecedentesPodologicosRepository.cs" />
     <Compile Include="Repositories\CalzadoHabitualRepository.cs" />
+    <Compile Include="Repositories\ConsultaRepository.cs" />
     <Compile Include="Repositories\DiagnosticoRepository.cs" />
     <Compile Include="Repositories\HistorialClinicoRepository.cs" />
     <Compile Include="Repositories\MaterialSoportePlantarRepository.cs" />

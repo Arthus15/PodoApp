@@ -63,6 +63,7 @@
     <Compile Include="Dto\TratamientoDto.cs" />
     <Compile Include="HelpersDto\PodologoHelperDto.cs" />
     <Compile Include="Interfaces\IAntecedentesService.cs" />
+    <Compile Include="Interfaces\IConsultaService.cs" />
     <Compile Include="Interfaces\IDiagnosticoTratamientoService.cs" />
     <Compile Include="Interfaces\IListaPacienteService.cs" />
     <Compile Include="Dto\ConsultaDto.cs" />

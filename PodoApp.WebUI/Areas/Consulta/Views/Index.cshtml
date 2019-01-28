@@ -1,0 +1,51 @@
+﻿
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model IEnumerable<PodoApp.Contracts.ServiceLibrary.Dto.ConsultaDto>
+
+<h3>Consultas</h3>
+
+<div class="panel panel-default">
+    <div class="panel-body">
+        <table class="table">
+
+            <tr>
+                <th>
+                    @Html.DisplayName("Fecha Consulta")
+                </th>
+                <th>
+                    @Html.DisplayName("Observaciones")
+                </th>
+
+                <th></th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                var res = item.fecha.Value.ToString("dd-MM-yyyy");
+
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => res)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.descripcion)
+                    </td>
+
+                    <td>
+                        <a href="@Url.Action("Edit", "Consulta", new {Area = "Consulta", idConsulta = item.idConsulta})">Editar Consulta</a>
+                    </td>
+                </tr>
+
+            }
+
+        </table>
+    </div>
+</div>
+<div>
+    @Html.ActionLink("Volver atrás", "Index", "ListaPacientes", new { Area = "ListaPacientes" }, new { })
+</div>
+

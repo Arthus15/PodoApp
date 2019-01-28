@@ -73,11 +73,11 @@ namespace PodoApp.WebUI.Areas.PrimeraVisita.Mappers
                 IdPodologo = visita.id_podologo,
                 FechaPrimeraConsulta = visita.fechaPrimeraConsulta,
                 IdPaciente = (Guid)visita.id_paciente,
-                Deportivos = (bool)visita.calzadoHabitual?.deportivos,
-                Vestir = (bool)visita.calzadoHabitual?.vestir,
-                Sandalias = (bool)visita.calzadoHabitual?.sandalias,
-                Botines = (bool)visita.calzadoHabitual?.botines,
-                Tacones = (bool)visita.calzadoHabitual?.tacones
+                Deportivos = visita.calzadoHabitual?.deportivos == null ? false : (bool)visita.calzadoHabitual?.deportivos,
+                Vestir = visita.calzadoHabitual?.vestir == null ? false : (bool)visita.calzadoHabitual?.vestir,
+                Sandalias = visita.calzadoHabitual?.sandalias == null ? false : (bool)visita.calzadoHabitual?.sandalias,
+                Botines = visita.calzadoHabitual?.botines == null ? false : (bool)visita.calzadoHabitual?.botines,
+                Tacones = visita.calzadoHabitual?.tacones == null ? false : (bool)visita.calzadoHabitual?.tacones
             };
         }
     }

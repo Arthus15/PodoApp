@@ -182,6 +182,10 @@
     <Compile Include="Areas\Antecedentes\Controllers\AntecedentesController.cs" />
     <Compile Include="Areas\Antecedentes\Mappers\FormAntecedentesMapper.cs" />
     <Compile Include="Areas\Antecedentes\Models\FormAntecedentes.cs" />
+    <Compile Include="Areas\Consulta\ConsultaAreaRegistration.cs" />
+    <Compile Include="Areas\Consulta\Controllers\ConsultaController.cs" />
+    <Compile Include="Areas\Consulta\Mapper\FormConsultaMapper.cs" />
+    <Compile Include="Areas\Consulta\Models\FormConsulta.cs" />
     <Compile Include="Areas\Dashboard\Controllers\DashboardController.cs" />
     <Compile Include="Areas\Dashboard\DashboardAreaRegistration.cs" />
     <Compile Include="Areas\DiagnosticoTratamiento\Controllers\DiagnosticoTratamientoController.cs" />
@@ -302,6 +306,10 @@
     <Content Include="Areas\DiagnosticoTratamiento\Views\web.config" />
     <Content Include="Areas\DiagnosticoTratamiento\Views\Edit.cshtml" />
     <Content Include="Areas\DiagnosticoTratamiento\Views\Create.cshtml" />
+    <Content Include="Areas\Consulta\Views\web.config" />
+    <Content Include="Areas\Consulta\Views\Create.cshtml" />
+    <Content Include="Areas\Consulta\Views\Edit.cshtml" />
+    <Content Include="Areas\Consulta\Views\Index.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />

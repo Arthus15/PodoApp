@@ -53,7 +53,8 @@ namespace PodoApp.WebUI
             builder.RegisterType<PacienteService>().As<IPacienteService>();
             builder.RegisterType<AntecedentesService>().As<IAntecedentesService>();
             builder.RegisterType<PrimeraVisitaService>().As<IPrimeraVisitaService>();
-            builder.RegisterType<DiagnosticoTratamientoService>().As<IDiagnosticoTratamientoService>();            
+            builder.RegisterType<DiagnosticoTratamientoService>().As<IDiagnosticoTratamientoService>();
+            builder.RegisterType<ConsultaService>().As<IConsultaService>();
         }
 
         private void RegisterRepositories(ContainerBuilder builder)
@@ -72,6 +73,7 @@ namespace PodoApp.WebUI
             builder.RegisterType<DiagnosticoRepository>().As<IDiagnosticoRepository>();
             builder.RegisterType<TratamientoRepository>().As<ITratamientoRepository>();
             builder.RegisterType<MaterialSoportePlantarRepository>().As<IMaterialSoportePlantarRepository>();
+            builder.RegisterType<ConsultaRepository>().As<IConsultaRepository>();
 
         }
         #endregion
