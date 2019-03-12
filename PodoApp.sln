@@ -31,7 +31,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PodoApp.Library.Test", "Pod
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PodoApp.DB.Infrastructure.Test", "PodoApp.DB.Infrastructure.Test\PodoApp.DB.Infrastructure.Test.csproj", "{7FCC3819-9046-4745-BD4B-BC3ABC1AFCB7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PodoApp.Impl.ServiceLibrary.Test", "PodoApp.Impl.ServiceLibrary.Test\PodoApp.Impl.ServiceLibrary.Test.csproj", "{C10DA969-EF19-40D9-A6AF-55DE68060CA5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PodoApp.Impl.ServiceLibrary.UnitTest", "PodoApp.Impl.ServiceLibrary.UnitTest\PodoApp.Impl.ServiceLibrary.UnitTest.csproj", "{6917A168-149E-4CD7-98B8-776CCDCBC24B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -73,10 +73,10 @@ Global
 		{7FCC3819-9046-4745-BD4B-BC3ABC1AFCB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7FCC3819-9046-4745-BD4B-BC3ABC1AFCB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7FCC3819-9046-4745-BD4B-BC3ABC1AFCB7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C10DA969-EF19-40D9-A6AF-55DE68060CA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C10DA969-EF19-40D9-A6AF-55DE68060CA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C10DA969-EF19-40D9-A6AF-55DE68060CA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C10DA969-EF19-40D9-A6AF-55DE68060CA5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6917A168-149E-4CD7-98B8-776CCDCBC24B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6917A168-149E-4CD7-98B8-776CCDCBC24B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6917A168-149E-4CD7-98B8-776CCDCBC24B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6917A168-149E-4CD7-98B8-776CCDCBC24B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -92,7 +92,7 @@ Global
 		{4F9D8B4B-BF12-4050-A7E2-9C5957ACDA87} = {B2EEE43F-E45C-467C-A66B-6DD398817DB2}
 		{66EE9B9C-09CA-42BB-B67A-3E1D84BA47E5} = {8B94887D-A4F6-46E4-B167-D08D6AD82F80}
 		{7FCC3819-9046-4745-BD4B-BC3ABC1AFCB7} = {C1AED1F6-3EC6-4361-A114-1B26ACC0363C}
-		{C10DA969-EF19-40D9-A6AF-55DE68060CA5} = {E6CD6416-1D19-4547-89F5-D328664BB702}
+		{6917A168-149E-4CD7-98B8-776CCDCBC24B} = {E6CD6416-1D19-4547-89F5-D328664BB702}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0F56C3A9-6443-4ECF-B08E-1C16EBB26380}

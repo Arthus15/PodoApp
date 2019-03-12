@@ -21,3 +21,6 @@
 /PodoApp.Contracts.ServiceLibrary/obj/Release
 /PodoApp.DB.Infrastructure/obj/Release
 /PodoApp.DB.Infrastructure.Test/bin/Debug/es
+/PodoApp.Impl.ServiceLibrary.UnitTest/bin/Debug
+/PodoApp.Impl.ServiceLibrary.UnitTest/obj/Debug
+/TestResults/78dedb25-bf9c-4ac0-a586-aa1706c8088d
