@@ -9,17 +9,17 @@ namespace PodoApp.Impl.ServiceLibrary.UnitTest.Mappers
     [TestClass]
     public class AntecedentesFisiologicosTest
     {
-        private readonly AntecedentesFisiologicosModel AntecedentesFisiologicosModel;
-        private readonly AntecedentesFisiologicosDto AntecedentesFisiologicosDto;
+        private readonly AntecedentesFisiologicosModel _antecedentesFisiologicosModel;
+        private readonly AntecedentesFisiologicosDto _antecedentesFisiologicosDto;
 
         public AntecedentesFisiologicosTest()
         {
-            AntecedentesFisiologicosModel = new AntecedentesFisiologicosModel()
+            _antecedentesFisiologicosModel = new AntecedentesFisiologicosModel()
             {
                 idAFisiologico = Guid.NewGuid()
             };
 
-            AntecedentesFisiologicosDto = new AntecedentesFisiologicosDto()
+            _antecedentesFisiologicosDto = new AntecedentesFisiologicosDto()
             {
                 idAFisiologico = Guid.NewGuid()
             };
@@ -28,22 +28,22 @@ namespace PodoApp.Impl.ServiceLibrary.UnitTest.Mappers
         [TestMethod]
         public void AntecedentesFisiologicosModel_Maps_To_Dto_CorrectType()
         {
-            var antecedentesFisiologicosDto = AntecedentesFisiologicosModel.ModelToDto();
+            var antecedentesFisiologicosDto = _antecedentesFisiologicosModel.ModelToDto();
             Assert.AreEqual(typeof(AntecedentesFisiologicosDto), antecedentesFisiologicosDto.GetType());
         }
 
         [TestMethod]
         public void AntecedentesFisiologicosModel_Maps_To_Dto_Correctly()
         {
-            var antecedentesFisiologicosDto = AntecedentesFisiologicosModel.ModelToDto();
+            var antecedentesFisiologicosDto = _antecedentesFisiologicosModel.ModelToDto();
 
-            Assert.AreEqual(AntecedentesFisiologicosModel.idAFisiologico, antecedentesFisiologicosDto.idAFisiologico);
+            Assert.AreEqual(_antecedentesFisiologicosModel.idAFisiologico, antecedentesFisiologicosDto.idAFisiologico);
         }
 
         [TestMethod]
         public void AntecedentesFisiologicosDto_Maps_To_Model_CorrectType()
         {
-            var antecedentesFisiologicosModel = AntecedentesFisiologicosDto.DtoToModel();
+            var antecedentesFisiologicosModel = _antecedentesFisiologicosDto.DtoToModel();
 
             Assert.AreEqual(typeof(AntecedentesFisiologicosModel), antecedentesFisiologicosModel.GetType());
         }
@@ -51,9 +51,9 @@ namespace PodoApp.Impl.ServiceLibrary.UnitTest.Mappers
         [TestMethod]
         public void AntecedentesFisiologicosDto_Maps_To_Model_Correctly()
         {
-            var antecedentesFisiologicosModel = AntecedentesFisiologicosDto.DtoToModel();
+            var antecedentesFisiologicosModel = _antecedentesFisiologicosDto.DtoToModel();
 
-            Assert.AreEqual(AntecedentesFisiologicosDto.idAFisiologico, antecedentesFisiologicosModel.idAFisiologico);
+            Assert.AreEqual(_antecedentesFisiologicosDto.idAFisiologico, antecedentesFisiologicosModel.idAFisiologico);
         }
     }
 }

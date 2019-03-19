@@ -20,9 +20,9 @@ namespace PodoApp.Impl.ServiceLibrary.Mappers
                 id_podologo = paciente.id_podologo,
                 id_historial_clinico = paciente.id_historial_clinico,
                 id_persona = paciente.id_persona,
-                historialClinico = paciente.historialClinico.ModelToDto(),
-                persona = paciente.persona.ModelToDto(),
-                primeraVisita = paciente.primeraVisita.Select(x => x.ModelToDto()).ToList()
+                historialClinico = paciente.historialClinico?.ModelToDto(),
+                persona = paciente.persona?.ModelToDto(),
+                primeraVisita = paciente.primeraVisita?.Select(x => x.ModelToDto()).ToList()
             };
         }
 
@@ -36,9 +36,9 @@ namespace PodoApp.Impl.ServiceLibrary.Mappers
                 id_podologo = paciente.id_podologo,
                 id_historial_clinico = paciente.id_historial_clinico,
                 id_persona = paciente.id_persona,
-                historialClinico = paciente.historialClinico.DtoToModel(),
-                persona = paciente.persona.DtoToModel(),
-                primeraVisita = paciente.primeraVisita.Select(x => x.DtoToModel()).ToList()
+                historialClinico = paciente.historialClinico?.DtoToModel(),
+                persona = paciente.persona?.DtoToModel(),
+                primeraVisita = paciente.primeraVisita?.Select(x => x.DtoToModel()).ToList()
             };
         }
     }
