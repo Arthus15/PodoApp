@@ -47,7 +47,15 @@ namespace PodoApp.DB.Infrastructure.Repositories
 
         PacienteModel IPacienteRepository.GetById(object id)
         {
-            return GetById(id).EntityToModel();
+            try
+            {
+                return GetById(id).EntityToModel();
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+
         }
 
         public bool Exists(Guid idPaciente)
