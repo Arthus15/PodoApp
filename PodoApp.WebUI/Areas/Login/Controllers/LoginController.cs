@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNet.Identity.Owin;
+using Microsoft.Owin.Security;
 using PodoApp.DB.Infrastructure.Configuration.Owin;
 using PodoApp.Impl.ServiceLibrary.Configuration.Owin;
 using PodoApp.WebUI.Areas.Login.Models;
@@ -89,6 +90,16 @@ namespace PodoApp.WebUI.Areas.Login.Controllers
                     ModelState.AddModelError("", "Invalid login attempt.");
                     return View(model);
             }
+        }
+
+        // GET: /Pages/LogOff
+
+        public ActionResult LogOff()
+        {
+            IAuthenticationManager AuthenticationManager = HttpContext.GetOwinContext().Authentication;
+            AuthenticationManager.SignOut();
+
+            return Redirect("~/Login/Login");
         }
     }
 }
