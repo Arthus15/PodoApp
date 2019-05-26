@@ -107,5 +107,6 @@
     <Build Include="dbo\Tables\historialClinico.sql" />
     <Build Include="dbo\Tables\decubitoSupinoExploracionMuscular.sql" />
     <Build Include="dbo\Tables\decubitoSupinoExploracionArticular.sql" />
+    <Build Include="dbo\Tables\Audit.sql" />
   </ItemGroup>
 </Project>
