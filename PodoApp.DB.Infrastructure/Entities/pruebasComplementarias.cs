@@ -1,5 +1,6 @@
 namespace PodoApp.DB.Infrastructure.Entities
 {
+    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
@@ -29,6 +30,7 @@ namespace PodoApp.DB.Infrastructure.Entities
 
         public Guid? id_primera_visita { get; set; }
 
+        [JsonIgnore]
         public virtual PrimeraVisita primeraVisita { get; set; }
     }
 }

@@ -31,7 +31,7 @@ namespace PodoApp.DB.Infrastructure.Repositories
             var newAntecedentes = model.ModelToEntity();
             var oldAntecedentes = GetById(newAntecedentes.idAFamiliares);
 
-            newAntecedentes.MapChanges(ref oldAntecedentes);
+            newAntecedentes.MapChanges(ref oldAntecedentes);           
             Update(oldAntecedentes);
         }
     }

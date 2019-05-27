@@ -1,5 +1,6 @@
 namespace PodoApp.DB.Infrastructure.Entities
 {
+    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
@@ -50,29 +51,41 @@ namespace PodoApp.DB.Infrastructure.Entities
 
         public Guid? id_pulsos { get; set; }
 
+        [JsonIgnore]
         public virtual Bipedestacion bipedestacion { get; set; }
 
+        [JsonIgnore]
         public virtual Deambulacion deambulacion { get; set; }
 
+        [JsonIgnore]
         public virtual DecubitoPronoExploracionArticular decubitoPronoExploracionArticular { get; set; }
 
+        [JsonIgnore]
         public virtual DecubitoSupinoExploracionArticular decubitoSupinoExploracionArticular { get; set; }
 
+        [JsonIgnore]
         public virtual DecubitoSupinoExploracionMorfologica decubitoSupinoExploracionMorfologica { get; set; }
 
+        [JsonIgnore]
         public virtual DecubitoSupinoExploracionMuscular decubitoSupinoExploracionMuscular { get; set; }
 
+        [JsonIgnore]
         public virtual DecubitoSupinoPulsos decubitoSupinoPulsos { get; set; }
 
+        [JsonIgnore]
         public virtual SedestacionExploracionArticular sedestacionExploracionArticular { get; set; }
 
+        [JsonIgnore]
         public virtual SedestacionExploracionMuscular sedestacionExploracionMuscular { get; set; }
 
+        [JsonIgnore]
         public virtual VisionFrontal visionFrontal { get; set; }
 
+        [JsonIgnore]
         public virtual VisionSagital visionSagital { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        [JsonIgnore]
         public virtual ICollection<PrimeraVisita> primeraVisita { get; set; }
     }
 }

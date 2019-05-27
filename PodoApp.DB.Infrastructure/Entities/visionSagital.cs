@@ -1,5 +1,6 @@
 namespace PodoApp.DB.Infrastructure.Entities
 {
+    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
@@ -25,6 +26,7 @@ namespace PodoApp.DB.Infrastructure.Entities
         public string otros { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        [JsonIgnore]
         public virtual ICollection<EstudioOrtopodologico> estudioOrtopodologico { get; set; }
     }
 }

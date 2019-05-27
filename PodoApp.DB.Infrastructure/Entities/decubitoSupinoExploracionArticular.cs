@@ -1,5 +1,6 @@
 namespace PodoApp.DB.Infrastructure.Entities
 {
+    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
@@ -199,11 +200,14 @@ namespace PodoApp.DB.Infrastructure.Entities
 
         public Guid? id_posicion_1_radio { get; set; }
 
+        [JsonIgnore]
         public virtual DecubitoSupinoAntepiePosicion1Radio decubitoSupinoAntepiePosicion1Radio { get; set; }
 
+        [JsonIgnore]
         public virtual DecubitoSupinoPosicionAnguloAntepie decubitoSupinoPosicionAnguloAntepie { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        [JsonIgnore]
         public virtual ICollection<EstudioOrtopodologico> estudioOrtopodologico { get; set; }
     }
 }

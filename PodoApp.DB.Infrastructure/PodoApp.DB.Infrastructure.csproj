@@ -74,6 +74,7 @@
     <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.ValueTuple.4.5.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
     </Reference>
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -91,6 +92,7 @@
     <Compile Include="Configuration\Entities\AntepieEntityConfiguration.cs" />
     <Compile Include="Configuration\Entities\AspNetRolesEntityConfiguration.cs" />
     <Compile Include="Configuration\Entities\AspNetUsersEntityConfiguration.cs" />
+    <Compile Include="Configuration\Entities\AuditEntityConfiguration.cs" />
     <Compile Include="Configuration\Entities\BipedestacionEntityConfiguration.cs" />
     <Compile Include="Configuration\Entities\CalzadoHabitualEntityConfiguration.cs" />
     <Compile Include="Configuration\Entities\DeambulacionEntityConfiguration.cs" />
@@ -122,6 +124,7 @@
     <Compile Include="Configuration\Owin\ApplicationDbContext.cs" />
     <Compile Include="Configuration\Owin\ApplicationUser.cs" />
     <Compile Include="Configuration\Owin\ApplicationUserManager.cs" />
+    <Compile Include="Entities\Audit.cs" />
     <Compile Include="Entities\AnguloFick.cs" />
     <Compile Include="Entities\antecedentesFamiliares.cs" />
     <Compile Include="Entities\antecedentesFisiologicos.cs" />
@@ -180,6 +183,11 @@
     <Compile Include="Mappers\PodologoMapper.cs" />
     <Compile Include="Mappers\PrimeraVisitaMapper.cs" />
     <Compile Include="Mappers\TratamientoMapper.cs" />
+    <Compile Include="Migrations\201905271926295_Initial.cs" />
+    <Compile Include="Migrations\201905271926295_Initial.Designer.cs">
+      <DependentUpon>201905271926295_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PodologiaContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\AntecedentesFamiliaresRepository.cs" />
@@ -206,6 +214,11 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201905271926295_Initial.resx">
+      <DependentUpon>201905271926295_Initial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

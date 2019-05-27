@@ -1,4 +1,5 @@
-﻿using PodoApp.DB.Infrastructure.Entities;
+﻿using Newtonsoft.Json;
+using PodoApp.DB.Infrastructure.Entities;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -6,6 +7,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace PodoApp.DB.Infrastructure.Abstracts
 {
@@ -13,11 +15,17 @@ namespace PodoApp.DB.Infrastructure.Abstracts
     {
         internal PodologiaContext context;
         internal DbSet<TEntity> dbSet;
+        internal DbSet<Audit> audit;
+
+        internal string INSERT_OPERATION = "Insert";
+        internal string UPDATE_OPERATION = "Update";
+        internal string DELETE_OPERATION = "Delete";
 
         public BaseRepository(PodologiaContext context)
         {
             this.context = context;
             this.dbSet = context.Set<TEntity>();
+            audit = context.Set<Audit>();
         }
 
         #region Public Methods
@@ -58,7 +66,7 @@ namespace PodoApp.DB.Infrastructure.Abstracts
         public virtual void Insert(TEntity entity)
         {
             dbSet.Add(entity);
-            context.SaveChanges();
+            AuditMethod(typeof(TEntity).ToString(), INSERT_OPERATION, JsonConvert.SerializeObject(entity));
         }
 
         public virtual void Delete(object id)
@@ -69,12 +77,14 @@ namespace PodoApp.DB.Infrastructure.Abstracts
 
         public virtual void Delete(TEntity entity)
         {
-            if(context.Entry(entity).State == EntityState.Detached)
+            if (context.Entry(entity).State == EntityState.Detached)
             {
                 dbSet.Attach(entity);
             }
 
             dbSet.Remove(entity);
+
+            AuditMethod(typeof(TEntity).ToString(), DELETE_OPERATION, JsonConvert.SerializeObject(entity));
         }
 
         public virtual void Update(TEntity entity)
@@ -82,6 +92,21 @@ namespace PodoApp.DB.Infrastructure.Abstracts
             dbSet.Attach(entity);
             context.Entry(entity).State = EntityState.Modified;
             context.SaveChanges();
+
+            AuditMethod(typeof(TEntity).ToString().Split('.')[typeof(TEntity).ToString().Split('.').Length - 1], UPDATE_OPERATION, JsonConvert.SerializeObject(entity));
+
+        }
+
+        #endregion
+
+        #region Private Methods
+
+        private void AuditMethod(string table, string operation, string newValue)
+        {
+                var auditory = audit.Create();
+                auditory = new Audit() {Id = 100,UserName = HttpContext.Current.GetOwinContext().Authentication.User.Identity.Name, NewValue = newValue, Operation = operation, TableName = table, DateTime = DateTime.Now };              
+                audit.Add(auditory);
+                context.SaveChanges();
         }
 
         #endregion

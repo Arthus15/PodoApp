@@ -12,6 +12,7 @@ namespace PodoApp.DB.Infrastructure
         public PodologiaContext()
             : base("name=PodologiaContext")
         {
+            Database.Log = Console.WriteLine;
         }
 
         public virtual DbSet<C__MigrationHistory> C__MigrationHistory { get; set; }
@@ -59,6 +60,8 @@ namespace PodoApp.DB.Infrastructure
         public virtual DbSet<VisionFrontal> visionFrontal { get; set; }
         public virtual DbSet<VisionSagital> visionSagital { get; set; }
 
+        public virtual DbSet<Audit> audit { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             //Se ha creado clases de configuración para cada Entidad
@@ -70,6 +73,7 @@ namespace PodoApp.DB.Infrastructure
             modelBuilder.Configurations.Add(new AntepieEntityConfiguration());
             modelBuilder.Configurations.Add(new AspNetRolesEntityConfiguration());
             modelBuilder.Configurations.Add(new AspNetUsersEntityConfiguration());
+            modelBuilder.Configurations.Add(new AuditEntityConfiguration());
             modelBuilder.Configurations.Add(new BipedestacionEntityConfiguration());
             modelBuilder.Configurations.Add(new CalzadoHabitualEntityConfiguration());
             modelBuilder.Configurations.Add(new DeambulacionEntityConfiguration());
@@ -98,6 +102,8 @@ namespace PodoApp.DB.Infrastructure
             modelBuilder.Configurations.Add(new TratamientoEntityConfiguration());
             modelBuilder.Configurations.Add(new VisionFrontalEntityConfiguration());
             modelBuilder.Configurations.Add(new VisionSagitalEntityConfiguration());
+
+            modelBuilder.Entity<Audit>().Property(x => x.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
         }
     }

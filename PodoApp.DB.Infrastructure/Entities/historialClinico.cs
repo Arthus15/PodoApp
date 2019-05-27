@@ -1,5 +1,6 @@
 namespace PodoApp.DB.Infrastructure.Entities
 {
+    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
@@ -31,15 +32,20 @@ namespace PodoApp.DB.Infrastructure.Entities
 
         public Guid? id_estudio { get; set; }
 
+        [JsonIgnore]
         public virtual AntecedentesFamiliares antecedentesFamiliares { get; set; }
 
+        [JsonIgnore]
         public virtual AntecedentesFisiologicos antecedentesFisiologicos { get; set; }
 
+        [JsonIgnore]
         public virtual AntecedentesPatologicos antecedentesPatologicos { get; set; }
 
+        [JsonIgnore]
         public virtual AntecedentesPodologicos antecedentesPodologicos { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        [JsonIgnore]
         public virtual ICollection<Paciente> paciente { get; set; }
     }
 }

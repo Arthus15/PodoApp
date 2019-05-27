@@ -1,5 +1,6 @@
 namespace PodoApp.DB.Infrastructure.Entities
 {
+    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
@@ -25,6 +26,8 @@ namespace PodoApp.DB.Infrastructure.Entities
         public string otros { get; set; }
 
         public Guid? id_tratamiento { get; set; }
+
+        [JsonIgnore]
 
         public virtual Tratamiento tratamiento { get; set; }
     }

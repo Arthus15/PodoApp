@@ -1,5 +1,6 @@
 namespace PodoApp.DB.Infrastructure.Entities
 {
+    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
@@ -53,20 +54,27 @@ namespace PodoApp.DB.Infrastructure.Entities
 
         public Guid? id_calzado_habitual { get; set; }
 
+        [JsonIgnore]
         public virtual CalzadoHabitual calzadoHabitual { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        [JsonIgnore]
         public virtual ICollection<Diagnostico> diagnostico { get; set; }
 
+        [JsonIgnore]
         public virtual EstudioOrtopodologico estudioOrtopodologico { get; set; }
 
+        [JsonIgnore]
         public virtual Paciente paciente { get; set; }
 
+        [JsonIgnore]
         public virtual Podologo podologo { get; set; }
 
+        [JsonIgnore]
         public virtual TipoEstudio tipoEstudio { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        [JsonIgnore]
         public virtual ICollection<PruebasComplementarias> pruebasComplementarias { get; set; }
     }
 }
