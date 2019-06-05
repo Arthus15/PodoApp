@@ -207,6 +207,9 @@
     <Compile Include="Areas\PrimeraVisita\Mappers\FormPrimeraVisitaMapper.cs" />
     <Compile Include="Areas\PrimeraVisita\Models\FormPrimeraVisita.cs" />
     <Compile Include="Areas\PrimeraVisita\PrimeraVisitaAreaRegistration.cs" />
+    <Compile Include="Areas\Registro\Controllers\RegistroController.cs" />
+    <Compile Include="Areas\Registro\Models\RegistroModel.cs" />
+    <Compile Include="Areas\Registro\RegistroAreaRegistration.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -310,6 +313,8 @@
     <Content Include="Areas\Consulta\Views\Create.cshtml" />
     <Content Include="Areas\Consulta\Views\Edit.cshtml" />
     <Content Include="Areas\Consulta\Views\Index.cshtml" />
+    <Content Include="Areas\Registro\Views\web.config" />
+    <Content Include="Areas\Registro\Views\Registro.cshtml" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
@@ -540,6 +545,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Dashboard\Models\" />
+    <Folder Include="Areas\Registro\Mappers\" />
     <Folder Include="Models\" />
     <Folder Include="Vendor\blueimp-file-upload\js\cors\" />
     <Folder Include="Vendor\blueimp-file-upload\js\vendor\" />
