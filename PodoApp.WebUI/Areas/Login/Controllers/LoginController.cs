@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNet.Identity.Owin;
+﻿using log4net;
+using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using PodoApp.DB.Infrastructure.Configuration.Owin;
 using PodoApp.Impl.ServiceLibrary.Configuration.Owin;
@@ -17,15 +18,18 @@ namespace PodoApp.WebUI.Areas.Login.Controllers
 
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+        private readonly ILog _log;
 
-        public LoginController()
+        public LoginController(ILog log)
         {
+            _log = log;
         }
 
-        public LoginController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
+        public LoginController(ApplicationUserManager userManager, ApplicationSignInManager signInManager, ILog log)
         {
             UserManager = userManager;
             SignInManager = signInManager;
+            _log = log;
         }
 
         public ApplicationSignInManager SignInManager
@@ -56,6 +60,7 @@ namespace PodoApp.WebUI.Areas.Login.Controllers
         [AllowAnonymous]
         public ActionResult Login()
         {
+            _log.Error("UOPS!");
             return View();
         }
 

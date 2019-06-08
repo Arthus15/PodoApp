@@ -7,6 +7,8 @@ using PodoApp.Impl.ServiceLibrary;
 using PodoApp.Impl.ServiceLibrary.Services;
 using PodoApp.Library.Repositories;
 using PodoApp.WebUI.Helpers;
+using System;
+using System.IO;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
@@ -49,6 +51,8 @@ namespace PodoApp.WebUI
         #region Private Methods
         protected void RegisterServices(ContainerBuilder builder)
         {
+            CofigureLog4Net(builder);
+
             builder.RegisterType<ListaPacienteService>().As<IListaPacienteService>();
             builder.RegisterType<PacienteService>().As<IPacienteService>();
             builder.RegisterType<AntecedentesService>().As<IAntecedentesService>();
@@ -75,6 +79,15 @@ namespace PodoApp.WebUI
             builder.RegisterType<MaterialSoportePlantarRepository>().As<IMaterialSoportePlantarRepository>();
             builder.RegisterType<ConsultaRepository>().As<IConsultaRepository>();
 
+        }
+
+        private void CofigureLog4Net(ContainerBuilder builder)
+        {
+            FileInfo log4netConfig = new FileInfo(@"D:\\TFG\\PodoApp\\PodoApp.WebUI\\log4net.config");
+            string logName = $"PodoApp_{DateTime.Now.ToString("mmddyy")}.txt";
+            log4net.GlobalContext.Properties["LogName"] = logName;
+            log4net.Config.XmlConfigurator.Configure(log4netConfig);
+            builder.RegisterModule(new LoggingModule());
         }
         #endregion
     }

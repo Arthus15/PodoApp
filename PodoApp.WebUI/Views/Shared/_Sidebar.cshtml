@@ -3,7 +3,7 @@
     <nav class="sidebar" data-sidebar-anyclick-close="">
         <!-- START sidebar nav-->
         <ul class="nav">
-            
+
             <!-- Iterates over all sidebar items-->
             <li class="nav-heading">
                 <span>Menú</span>
@@ -15,11 +15,17 @@
                     <span>Listado de pacientes</span>
                 </a>
             </li>
-
+            @if (User.IsInRole("ADMIN"))
+            {
+                <li class="@Html.isActive(controller: "Registro")">
+                    <a href="@Url.Action("Registro", "Registro", new { Area = "Registro" })" title="Registar nuevo usuario">
+                        <em class="icon-user"></em>
+                        <span>Registar nuevo usuario</span>
+                    </a>
+                </li>
+            }
         </ul>
         <!-- END sidebar nav-->
     </nav>
 </div>
 <!-- END Sidebar (left)-->
-
-
