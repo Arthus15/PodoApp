@@ -1,13 +1,11 @@
-﻿using PodoApp.Contracts.ServiceLibrary.Dto;
+﻿using log4net;
+using PodoApp.Contracts.ServiceLibrary.Dto;
 using PodoApp.Contracts.ServiceLibrary.Interfaces;
+using PodoApp.WebUI.Areas.Antecedentes.Mappers;
 using PodoApp.WebUI.Areas.Antecedentes.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
-using PodoApp.WebUI.Areas.Antecedentes.Mappers;
 
 namespace PodoApp.WebUI.Areas.Antecedentes.Controllers
 {
@@ -15,65 +13,94 @@ namespace PodoApp.WebUI.Areas.Antecedentes.Controllers
     {
         private readonly IPacienteService _pacienteService;
         private readonly IAntecedentesService _antecedentesService;
+        private readonly ILog _log;
 
-        public AntecedentesController(IPacienteService pacienteService, IAntecedentesService antecedentesService)
+        public AntecedentesController(IPacienteService pacienteService, IAntecedentesService antecedentesService, ILog log)
         {
             _pacienteService = pacienteService;
             _antecedentesService = antecedentesService;
+            _log = log;
         }
 
         // GET: Antecedentes/Antecedentes
         [HttpGet]
         public ActionResult Create(Guid idPaciente)
         {
-            PacienteDto paciente = _pacienteService.Get(idPaciente);
-
-            FormAntecedentes form = new FormAntecedentes();
-
-            if (paciente != null)
+            try
             {
-                form.IdPaciente = idPaciente;
-            }
-            else
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                PacienteDto paciente = _pacienteService.Get(idPaciente);
 
+                FormAntecedentes form = new FormAntecedentes();
+
+                if (paciente != null)
+                {
+                    form.IdPaciente = idPaciente;
+                }
+                else
+                {
+                    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+
+                }
+                return View();
             }
-            return View();
+            catch (Exception ex)
+            {
+                _log.Error($"[Method: Create(Guid idPaciente)] -> {ex}");
+
+                return Redirect("~/Error/Error");
+            }
 
         }
 
         [HttpPost]
         public ActionResult Create(FormAntecedentes form)
         {
-            if (ModelState.IsValid)
+            try
             {
-                var paciente = _pacienteService.Get(form.IdPaciente);
-                form.IdHistorialClinico = paciente.historialClinico.idHistorialClinico;
-                var historialClinico = form.FormToHistorialClinicoDto();
-                _antecedentesService.Insert(historialClinico);
-            }
+                if (ModelState.IsValid)
+                {
+                    var paciente = _pacienteService.Get(form.IdPaciente);
+                    form.IdHistorialClinico = paciente.historialClinico.idHistorialClinico;
+                    var historialClinico = form.FormToHistorialClinicoDto();
+                    _antecedentesService.Insert(historialClinico);
+                }
 
-            return View(form);
+                return View(form);
+            }
+            catch (Exception ex)
+            {
+                _log.Error($"[Method: Create(FormAntecedentes form)] -> {ex}");
+
+                return Redirect("~/Error/Error");
+            }
         }
 
         public ActionResult Edit(Guid? idPaciente)
         {
-            if (idPaciente == null)
+            try
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                if (idPaciente == null)
+                {
+                    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                }
+
+                var paciente = _pacienteService.Get((Guid)idPaciente);
+
+                var historial = paciente.historialClinico;
+
+                if (historial == null)
+                {
+                    return HttpNotFound();
+                }
+
+                return View(historial.FillForm());
             }
-
-            var paciente = _pacienteService.Get((Guid) idPaciente);
-
-            var historial = paciente.historialClinico;
-
-            if (historial == null)
+            catch (Exception ex)
             {
-                return HttpNotFound();
-            }            
+                _log.Error($"[Method: Edit(Guid? idPaciente)] -> {ex}");
 
-            return View(historial.FillForm());
+                return Redirect("~/Error/Error");
+            }
         }
 
         // POST: /Antecedentes/Edit
@@ -81,12 +108,21 @@ namespace PodoApp.WebUI.Areas.Antecedentes.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(FormAntecedentes form)
         {
-            if (ModelState.IsValid)
+            try
             {
-                _antecedentesService.Update(form.FormToHistorialClinicoDto(false));
-                return Redirect("~/ListaPacientes/ListaPacientes/");
+                if (ModelState.IsValid)
+                {
+                    _antecedentesService.Update(form.FormToHistorialClinicoDto(false));
+                    return Redirect("~/ListaPacientes/ListaPacientes/");
+                }
+                return View(form);
             }
-            return View(form);
+            catch (Exception ex)
+            {
+                _log.Error($"[Method: Edit(FormAntecedentes form)] -> {ex}");
+
+                return Redirect("~/Error/Error");
+            }
         }
     }
 }

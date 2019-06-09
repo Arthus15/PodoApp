@@ -5,8 +5,6 @@ using PodoApp.DB.Infrastructure.Configuration.Owin;
 using PodoApp.Impl.ServiceLibrary.Configuration.Owin;
 using PodoApp.WebUI.Areas.Login.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
@@ -60,8 +58,17 @@ namespace PodoApp.WebUI.Areas.Login.Controllers
         [AllowAnonymous]
         public ActionResult Login()
         {
-            _log.Error("UOPS!");
-            return View();
+            try
+            {
+                return View();
+            }
+            catch (Exception ex)
+            {
+                _log.Error($"[Method: Login()] -> {ex} ");
+
+                return Redirect("~/Error/Error");
+            }
+
         }
 
         [HttpPost]
@@ -69,31 +76,40 @@ namespace PodoApp.WebUI.Areas.Login.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Login(LoginModel model, string returnUrl)
         {
-            if (!ModelState.IsValid)
+            try
             {
-                return View(model);
-            }
-
-            // This doesn't count login failures towards account lockout
-            // To enable password failures to trigger account lockout, change to shouldLockout: true
-            var result = await
-            SignInManager.PasswordSignInAsync(model.Usuario, model.Password, true, shouldLockout: false);
-            switch (result)
-            {
-                case SignInStatus.Success:
-                    return Redirect("~/Dashboard/Dashboard/Dashboard_v1");
-                case SignInStatus.LockedOut:
-                    return View("Lockout");
-                case SignInStatus.RequiresVerification:
-                    return RedirectToAction("SendCode", new
-                    {
-                        ReturnUrl = returnUrl,
-                        RememberMe = true
-                    });
-                case SignInStatus.Failure:
-                default:
-                    ModelState.AddModelError("", "Invalid login attempt.");
+                if (!ModelState.IsValid)
+                {
                     return View(model);
+                }
+
+                // This doesn't count login failures towards account lockout
+                // To enable password failures to trigger account lockout, change to shouldLockout: true
+                var result = await
+                SignInManager.PasswordSignInAsync(model.Usuario, model.Password, true, shouldLockout: false);
+                switch (result)
+                {
+                    case SignInStatus.Success:
+                        return Redirect("~/Dashboard/Dashboard/Dashboard_v1");
+                    case SignInStatus.LockedOut:
+                        return View("Lockout");
+                    case SignInStatus.RequiresVerification:
+                        return RedirectToAction("SendCode", new
+                        {
+                            ReturnUrl = returnUrl,
+                            RememberMe = true
+                        });
+                    case SignInStatus.Failure:
+                    default:
+                        ModelState.AddModelError("", "Invalid login attempt.");
+                        return View(model);
+                }
+            }
+            catch (Exception ex)
+            {
+                _log.Error($"[Method: Login(LoginModel model, string returnUrl)] -> {ex} ");
+
+                return Redirect("~/Error/Error");
             }
         }
 
@@ -101,10 +117,19 @@ namespace PodoApp.WebUI.Areas.Login.Controllers
 
         public ActionResult LogOff()
         {
-            IAuthenticationManager AuthenticationManager = HttpContext.GetOwinContext().Authentication;
-            AuthenticationManager.SignOut();
+            try
+            {
+                IAuthenticationManager AuthenticationManager = HttpContext.GetOwinContext().Authentication;
+                AuthenticationManager.SignOut();
 
-            return Redirect("~/Login/Login");
+                return Redirect("~/Login/Login");
+            }
+            catch (Exception ex)
+            {
+                _log.Error($"[Method: LogOff()] -> {ex} ");
+
+                return Redirect("~/Error/Error");
+            }
         }
     }
 }

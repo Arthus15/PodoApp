@@ -1,10 +1,9 @@
-﻿using Microsoft.AspNet.Identity.Owin;
+﻿using log4net;
+using Microsoft.AspNet.Identity.Owin;
 using PodoApp.DB.Infrastructure.Configuration.Owin;
 using PodoApp.Impl.ServiceLibrary.Configuration.Owin;
 using PodoApp.WebUI.Areas.Registro.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
@@ -15,17 +14,19 @@ namespace PodoApp.WebUI.Areas.Registro.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
-
+        private readonly ILog _log;
 
         #region Constructor
-        public RegistroController()
+        public RegistroController(ILog log)
         {
+            _log = log;
         }
 
-        public RegistroController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
+        public RegistroController(ApplicationUserManager userManager, ApplicationSignInManager signInManager, ILog log)
         {
             UserManager = userManager;
             SignInManager = signInManager;
+            _log = log;
         }
 
         public ApplicationSignInManager SignInManager
@@ -58,11 +59,29 @@ namespace PodoApp.WebUI.Areas.Registro.Controllers
         //[AllowAnonymous]
         public ActionResult Registro()
         {
-            return View();
+            try
+            {
+                return View();
+            }
+            catch (Exception ex)
+            {
+                _log.Error($"[Method: Registro()] -> {ex}");
+
+                return Redirect("~/Error/Error");
+            }
         }
         public ActionResult Recover()
         {
-            return View();
+            try
+            {
+                return View();
+            }
+            catch (Exception ex)
+            {
+                _log.Error($"[Method: Recover()] -> {ex}");
+
+                return Redirect("~/Error/Error");
+            }
         }
 
         //
@@ -72,19 +91,28 @@ namespace PodoApp.WebUI.Areas.Registro.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Registro(RegistroModel model)
         {
-            if (ModelState.IsValid)
+            try
             {
-                var user = new ApplicationUser { UserName = model.Usuario, Email = model.Usuario + "@uma.es" };
-                var result = await UserManager.CreateAsync(user, model.Password);
-                if (result.Succeeded)
+                if (ModelState.IsValid)
                 {
-                    await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+                    var user = new ApplicationUser { UserName = model.Usuario, Email = model.Usuario + "@uma.es" };
+                    var result = await UserManager.CreateAsync(user, model.Password);
+                    if (result.Succeeded)
+                    {
+                        await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
 
-                    return Redirect("~/Dashboard/Dashboard/Dashboard_v1"); ;
+                        return Redirect("~/Dashboard/Dashboard/Dashboard_v1"); ;
+                    }
                 }
-            }
 
-            return View(model);
+                return View(model);
+            }
+            catch (Exception ex)
+            {
+                _log.Error($"[Method: Registro(RegistroModel model)] -> {ex}");
+
+                return Redirect("~/Error/Error");
+            }
         }
     }
 }

@@ -1,0 +1,21 @@
+﻿@{
+        ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+<div class="abs-center wd-xl">
+    <!-- START panel-->
+    <div class="text-center mb-xl">
+        <div class="mb-lg">
+            <em class="fa fa-wrench fa-5x text-muted"></em>
+        </div>
+        <div class="text-lg mb-lg">500</div>
+        <p class="lead m0">Uops! Algo ha ido mal :(</p>
+        <p>Por favor, si el error se repite, póngase en contacto con alguien del staff técnico.</p>
+    </div>
+    <ul class="list-inline text-center text-sm mb-xl">
+        <li>
+            <a href="@Url.Action("Dashboard_v1", "Dashboard", new {Area = "Dashboard"})" class="text-muted"><h4>Vuelve al menú principal</h4></a>
+        </li>
+        <li class="text-muted">|</li>
+    </ul>
+</div>

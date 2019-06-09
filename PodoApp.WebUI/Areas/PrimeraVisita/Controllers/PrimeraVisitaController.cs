@@ -1,12 +1,10 @@
-﻿using PodoApp.Contracts.ServiceLibrary.Dto;
+﻿using log4net;
+using PodoApp.Contracts.ServiceLibrary.Dto;
 using PodoApp.Contracts.ServiceLibrary.Interfaces;
 using PodoApp.WebUI.Areas.PrimeraVisita.Mappers;
 using PodoApp.WebUI.Areas.PrimeraVisita.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 
 namespace PodoApp.WebUI.Areas.PrimeraVisita.Controllers
@@ -15,75 +13,111 @@ namespace PodoApp.WebUI.Areas.PrimeraVisita.Controllers
     {
         private readonly IPacienteService _pacienteService;
         private readonly IPrimeraVisitaService _primeraVisitaService;
+        private readonly ILog _log;
 
-        public PrimeraVisitaController(IPacienteService pacienteService, IPrimeraVisitaService primeraVisitaService)
+        public PrimeraVisitaController(IPacienteService pacienteService, IPrimeraVisitaService primeraVisitaService, ILog log)
         {
             _pacienteService = pacienteService;
             _primeraVisitaService = primeraVisitaService;
+            _log = log;
         }
 
 
         // GET: PrimeraVisita
         public ActionResult Index()
         {
-            return View();
+            try
+            {
+                return View();
+            }
+            catch (Exception ex)
+            {
+                _log.Error($"[Method: Index()] -> {ex}");
+
+                return Redirect("~/Error/Error");
+            }
         }
 
 
         // GET: /PrimeraVisita/Create
         public ActionResult Create(Guid idpaciente)
         {
-            FormPrimeraVisita form = new FormPrimeraVisita();
-
-            if (_pacienteService.Exists(idpaciente) == true)
+            try
             {
-                form.IdPaciente = idpaciente;
+                FormPrimeraVisita form = new FormPrimeraVisita();
+
+                if (_pacienteService.Exists(idpaciente) == true)
+                {
+                    form.IdPaciente = idpaciente;
+                }
+                else
+                {
+                    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+
+                }
+
+                return View();
             }
-            else
+            catch (Exception ex)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                _log.Error($"[Method: Create(Guid idPaciente)] -> {ex}");
 
+                return Redirect("~/Error/Error");
             }
-
-            return View();
         }
 
         // POST
         [HttpPost]
         public ActionResult Create(FormPrimeraVisita form)
         {
-            if (ModelState.IsValid)
+            try
             {
-                _primeraVisitaService.Insert(form.FormToDTo());
-                return Redirect("~/ListaPacientes/ListaPacientes/");
+                if (ModelState.IsValid)
+                {
+                    _primeraVisitaService.Insert(form.FormToDTo());
+                    return Redirect("~/ListaPacientes/ListaPacientes/");
+                }
+
+                return View(form);
             }
+            catch (Exception ex)
+            {
+                _log.Error($"[Method: Create(FormPrimeraVisita form)] -> {ex}");
 
-
-            return View(form);
+                return Redirect("~/Error/Error");
+            }
         }
 
 
         // GET: /PrimeraVisita/Edit
         public ActionResult Edit(Guid? idvisita)
         {
-
-            if (idvisita == null)
+            try
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                if (idvisita == null)
+                {
+                    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                }
+
+                PrimeraVisitaDto visita = _primeraVisitaService.Get((Guid)idvisita);
+
+                if (visita == null)
+                {
+                    return HttpNotFound();
+                }
+
+                FormPrimeraVisita form = visita.PrimeraVisitaDtoToFormPrimeraVisita();
+
+                ViewBag.Podologos = new SelectList(_primeraVisitaService.GetPodologos(), "Nombre", "IdPodologo", form.IdPodologo);
+
+                return View(form);
             }
-
-            PrimeraVisitaDto visita = _primeraVisitaService.Get((Guid)idvisita);
-
-            if (visita == null)
+            catch (Exception ex)
             {
-                return HttpNotFound();
+                _log.Error($"[Method: Edit(Guid? idvisita)] -> {ex}");
+
+                return Redirect("~/Error/Error");
             }
-
-            FormPrimeraVisita form = visita.PrimeraVisitaDtoToFormPrimeraVisita();
-
-            ViewBag.Podologos = new SelectList(_primeraVisitaService.GetPodologos(), "Nombre", "IdPodologo", form.IdPodologo);
-
-            return View(form);
         }
 
         // POST: /PrimeraVisita/Edit
@@ -91,14 +125,23 @@ namespace PodoApp.WebUI.Areas.PrimeraVisita.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(FormPrimeraVisita form)
         {
-            form.IdPodologo = Guid.Parse(form.AuxIdPodolog);
-
-            if (ModelState.IsValid)
+            try
             {
-                _primeraVisitaService.Update(form.FormToDTo(false));
-                return Redirect("~/ListaPacientes/ListaPacientes/");
+                form.IdPodologo = Guid.Parse(form.AuxIdPodolog);
+
+                if (ModelState.IsValid)
+                {
+                    _primeraVisitaService.Update(form.FormToDTo(false));
+                    return Redirect("~/ListaPacientes/ListaPacientes/");
+                }
+                return View(form);
             }
-            return View(form);
+            catch (Exception ex)
+            {
+                _log.Error($"[Method: Edit(FormPrimeraVisita form)] -> {ex}");
+
+                return Redirect("~/Error/Error");
+            }
         }
 
     }

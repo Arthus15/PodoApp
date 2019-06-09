@@ -83,8 +83,8 @@ namespace PodoApp.WebUI
 
         private void CofigureLog4Net(ContainerBuilder builder)
         {
-            FileInfo log4netConfig = new FileInfo(@"D:\\TFG\\PodoApp\\PodoApp.WebUI\\log4net.config");
-            string logName = $"PodoApp_{DateTime.Now.ToString("mmddyy")}.txt";
+            FileInfo log4netConfig = new FileInfo($"{AppDomain.CurrentDomain.BaseDirectory}\\log4net.config");
+            string logName = $"PodoApp_{DateTime.Now.ToString("MMddyy")}.txt";
             log4net.GlobalContext.Properties["LogName"] = logName;
             log4net.Config.XmlConfigurator.Configure(log4netConfig);
             builder.RegisterModule(new LoggingModule());

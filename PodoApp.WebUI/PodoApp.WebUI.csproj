@@ -195,6 +195,8 @@
     <Compile Include="Areas\DiagnosticoTratamiento\DiagnosticoTratamientoAreaRegistration.cs" />
     <Compile Include="Areas\DiagnosticoTratamiento\Mappers\FormDiagnosticoTratamientoMapper.cs" />
     <Compile Include="Areas\DiagnosticoTratamiento\Models\FormDiagnosticoTratamiento.cs" />
+    <Compile Include="Areas\Error\Controllers\ErrorController.cs" />
+    <Compile Include="Areas\Error\ErrorAreaRegistration.cs" />
     <Compile Include="Areas\ListaPacientes\Controllers\ListaPacientesController.cs" />
     <Compile Include="Areas\ListaPacientes\ListaPacientesAreaRegistration.cs" />
     <Compile Include="Areas\ListaPacientes\Mappers\PacienteViewModelMapper.cs" />
@@ -322,6 +324,8 @@
     <Content Include="log4net.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Areas\Error\Views\web.config" />
+    <Content Include="Areas\Error\Views\Error_500.cshtml" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
@@ -552,6 +556,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Dashboard\Models\" />
+    <Folder Include="Areas\Error\Models\" />
     <Folder Include="Areas\Registro\Mappers\" />
     <Folder Include="Models\" />
     <Folder Include="Vendor\blueimp-file-upload\js\cors\" />
